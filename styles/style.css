@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -50,4 +51,110 @@ q:before, q:after {
 table {
   border-collapse: collapse;
   border-spacing: 0;
+}
+
+body {
+  max-width: 1400px;
+  text-transform: lowercase;
+}
+
+.menu {
+  margin-top: 1.875rem;
+}
+.menu ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.menu ul li {
+  margin: 0.625rem 3.75rem;
+}
+.menu ul li .menu-item {
+  color: #303030;
+  font-weight: 500;
+  font-size: 1rem;
+  font-family: "Poppins", sans-serif;
+  text-decoration: none;
+  line-height: 1.6875rem;
+  text-align: center;
+}
+
+.first-section {
+  display: flex;
+  justify-content: space-around;
+}
+.first-section .main-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+.first-section .main-text h3 {
+  font-weight: 600;
+  font-size: 1rem;
+  color: #8A39E1;
+  line-height: 1.5rem;
+}
+.first-section .main-text h1 {
+  font-weight: 700;
+  font-size: 3.75rem;
+  color: #303030;
+  line-height: 5.625rem;
+}
+.first-section .main-text h2 {
+  margin-top: -1.25rem;
+  font-weight: 600;
+  font-size: 1.5rem;
+  color: #303030;
+  line-height: 2.25rem;
+}
+.first-section .main-text h2 span {
+  color: #8A39E1;
+}
+.first-section .main-img {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+.first-section .botoes {
+  margin: 50px 0;
+}
+.first-section .botoes .btn-1 {
+  margin-right: 45px;
+}
+
+.botao-primary {
+  background: #8A39E1;
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 1.125rem;
+  line-height: 1.6875rem;
+  padding: 0.625rem 1.25rem;
+  transition: all 0.5s ease-in-out;
+}
+.botao-primary:hover {
+  background: #fff;
+  color: #8A39E1;
+  outline: 1.8px solid #8A39E1;
+}
+
+.botao-secondary {
+  background: #fff;
+  color: #303030;
+  text-decoration: none;
+  outline: 1.8px solid #303030;
+  font-weight: 600;
+  padding: 0.625rem 1.25rem;
+  font-size: 1.125rem;
+  transition: all 0.5s ease-in-out;
+}
+.botao-secondary:hover {
+  background: #8A39E1;
+  color: #fff;
+  outline: 1.8px solid #8A39E1;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
 }

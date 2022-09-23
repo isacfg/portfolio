@@ -1,0 +1,23 @@
+
+body
+    max-width: 1400px
+    text-transform: lowercase
+
+
+.menu
+    margin-top: rem(30px)
+
+    ul
+        display: flex
+        justify-content: center
+        align-items: center
+
+
+        li
+            margin: rem(10px) rem(60px)
+
+            .menu-item
+                color: $blackish
+                font-weight: $mediumWeight
+                font-size: rem($navFontSize)
+                @include navText()
