@@ -4,9 +4,38 @@
 
 @import "./layout/_header"
 @import "./layout/_firstSection"
+@import "./layout/_aboutSection"
+@import "./layout/_educationSection"
+@import "./layout/_projectsSection"
 
 @import "components/_btn"
 
+html 
+    box-sizing: border-box
+
 body
     font-family: 'Poppins', sans-serif
+    margin: 0 auto
+    max-width: 1400px
+    text-transform: lowercase
 
+    font-smooth: always
+    -webkit-font-smoothing: antialiased
+    -moz-osx-font-smoothing: grayscale
+    
+section
+    display: flex
+    justify-content: space-between
+    max-width: 1100px
+    height: 65vh
+    margin: 0 auto
+
+
+    .section-title
+        font-weight: $semiBoldWeight
+        font-size: rem(24px)
+        color: $blackish
+        line-height: rem(36px)
+
+        span
+            color: $purple

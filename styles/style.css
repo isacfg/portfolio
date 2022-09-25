@@ -34,10 +34,6 @@ body {
   line-height: 1;
 }
 
-ol, ul {
-  list-style: none;
-}
-
 blockquote, q {
   quotes: none;
 }
@@ -53,11 +49,6 @@ table {
   border-spacing: 0;
 }
 
-body {
-  max-width: 1400px;
-  text-transform: lowercase;
-}
-
 .menu {
   margin-top: 1.875rem;
 }
@@ -65,6 +56,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  list-style: none;
 }
 .menu ul li {
   margin: 0.625rem 3.75rem;
@@ -79,10 +71,6 @@ body {
   text-align: center;
 }
 
-.first-section {
-  display: flex;
-  justify-content: space-around;
-}
 .first-section .main-text {
   display: flex;
   flex-direction: column;
@@ -91,9 +79,15 @@ body {
 }
 .first-section .main-text h3 {
   font-weight: 600;
-  font-size: 1rem;
+  font-size: 0.9375rem;
   color: #8A39E1;
   line-height: 1.5rem;
+}
+.first-section .main-text h2 {
+  font-weight: 600;
+  font-size: 1.5rem;
+  color: #303030;
+  line-height: 2.25rem;
 }
 .first-section .main-text h1 {
   font-weight: 700;
@@ -103,10 +97,6 @@ body {
 }
 .first-section .main-text h2 {
   margin-top: -1.25rem;
-  font-weight: 600;
-  font-size: 1.5rem;
-  color: #303030;
-  line-height: 2.25rem;
 }
 .first-section .main-text h2 span {
   color: #8A39E1;
@@ -115,12 +105,154 @@ body {
   display: flex;
   justify-content: center;
   align-items: flex-end;
+  max-width: 425px;
+  max-height: 425px;
 }
 .first-section .botoes {
   margin: 50px 0;
 }
 .first-section .botoes .btn-1 {
   margin-right: 45px;
+}
+
+.about-section .about-img {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  max-width: 425px;
+  max-height: 425px;
+}
+.about-section .about-text-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.about-section .about-text-container span {
+  color: #8A39E1;
+}
+.about-section .about-text-container h2 {
+  font-size: 1.625rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #303030;
+}
+.about-section .about-text-container .about-texts {
+  max-width: 550px;
+  margin-bottom: 15px;
+}
+.about-section .about-text-container .about-texts .about-text {
+  font-size: 0.9375rem;
+  font-weight: 300;
+  margin-bottom: 15px;
+  color: #303030;
+  line-height: 1.5;
+}
+
+.education-section {
+  margin-top: 2.5rem;
+}
+.education-section img {
+  max-width: 23.125rem;
+  max-height: 23.125rem;
+}
+.education-section h2 {
+  margin-top: 1.25rem;
+}
+.education-section .habilidades {
+  display: flex;
+  flex-direction: row;
+}
+.education-section .habilidades .col2, .education-section .habilidades .col3 {
+  margin-left: 5rem;
+}
+.education-section .habilidades .col1 {
+  margin-left: 1.25rem;
+}
+.education-section .habilidades li {
+  margin: 0 0 0.9375rem 0;
+  font-size: 0.9375rem;
+}
+.education-section .habilidades ul {
+  margin-top: 1.25rem;
+}
+.education-section .formacao .formacao-item {
+  margin-top: 1.25rem;
+}
+.education-section .formacao .formacao-item .curso {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: #303030;
+  line-height: 163.9%;
+}
+.education-section .formacao .formacao-item p {
+  font-size: 0.9375rem;
+  font-weight: 300;
+}
+
+.projects-section {
+  margin-top: 2.5rem;
+}
+.projects-section .project-texts .project-number {
+  font-weight: 600;
+  color: #8A39E1;
+  font-size: 0.9375rem;
+  margin-top: 2.5rem;
+  margin-bottom: 0.625rem;
+}
+.projects-section .project-texts .project-name {
+  font-weight: 600;
+  color: #303030;
+  font-size: 1.125rem;
+  margin-bottom: 1.875rem;
+}
+.projects-section .project-texts .project-name span {
+  color: #8A39E1;
+}
+.projects-section .project-texts .project-description {
+  font-size: 0.9375rem;
+  font-weight: 300;
+  color: #303030;
+  line-height: 1.5;
+  margin-bottom: 1.25rem;
+}
+.projects-section .project-texts .projects-tech {
+  font-size: 0.9375rem;
+  font-weight: 400;
+  color: #303030;
+  line-height: 1.5;
+}
+.projects-section .project-texts .projects-tech span {
+  color: #8A39E1;
+}
+.projects-section .project-texts .project-tech {
+  font-size: 0.9375rem;
+  font-weight: 300;
+  color: #303030;
+  line-height: 1.5;
+}
+.projects-section .projects-slider {
+  position: relative;
+  bottom: 100px;
+}
+.projects-section .projects-slider .drawing-ilus {
+  position: relative;
+  top: 50px;
+  right: 40px;
+}
+.projects-section .projects-slider .project-arrows {
+  background: #8A39E1;
+  width: 100px;
+  height: 40px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: relative;
+  bottom: 25px;
+  left: 380px;
+}
+.projects-section .projects-slider .project-arrows img {
+  width: 14px;
+  cursor: pointer;
 }
 
 .botao-primary {
@@ -131,7 +263,8 @@ body {
   font-size: 1.125rem;
   line-height: 1.6875rem;
   padding: 0.625rem 1.25rem;
-  transition: all 0.5s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  margin-top: 40px !important;
 }
 .botao-primary:hover {
   background: #fff;
@@ -147,7 +280,7 @@ body {
   font-weight: 600;
   padding: 0.625rem 1.25rem;
   font-size: 1.125rem;
-  transition: all 0.5s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 .botao-secondary:hover {
   background: #8A39E1;
@@ -155,6 +288,33 @@ body {
   outline: 1.8px solid #8A39E1;
 }
 
+html {
+  box-sizing: border-box;
+}
+
 body {
   font-family: "Poppins", sans-serif;
+  margin: 0 auto;
+  max-width: 1400px;
+  text-transform: lowercase;
+  font-smooth: always;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+section {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1100px;
+  height: 65vh;
+  margin: 0 auto;
+}
+section .section-title {
+  font-weight: 600;
+  font-size: 1.5rem;
+  color: #303030;
+  line-height: 2.25rem;
+}
+section .section-title span {
+  color: #8A39E1;
 }
