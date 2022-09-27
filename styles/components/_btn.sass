@@ -12,24 +12,46 @@
 
     margin-top: 40px !important
 
+    // &:hover
+    //     background: $white
+    //     color: $purple
+    //     outline: 1.8px solid $purple
+
     &:hover
         background: $white
         color: $purple
         outline: 1.8px solid $purple
+        transform: translateY(-4px) translateX(-2px)
+        box-shadow: 7px 7px 0 0 $purple
+
 
 
 .botao-secondary
-    background: $white
+    background-color: $white
     color: $blackish
     text-decoration: none
-    outline: 1.8px solid $blackish
-    font-weight: $semiBoldWeight
-    padding: rem(10px) rem(20px)
-    font-size: rem($btnFontSize)
+    line-height: rem(27px)
 
-    transition: all 0.2s ease-in-out
+
+    font-size: rem($btnFontSize)
+    font-weight: $semiBoldWeight
+
+    padding: rem(10px) rem(20px)
+    cursor: pointer
+    transition: all 0.3s ease-in-out
+    outline: 1.8px solid $blackish
+    box-shadow: 0 0 0 0 $blackish
 
     &:hover
-        background: $purple
-        color: $white
+        transform: translateY(-4px) translateX(-2px)
+        box-shadow: 7px 7px 0 0 $purple
+
+        color: $purple
+        outline: 1.8px solid $purple
+
+    &:active
+        transform: translateY(-4px) translateX(-2px)
+        box-shadow: 7px 7px 0 0 $purple
+
+        color: $purple
         outline: 1.8px solid $purple

@@ -14,13 +14,21 @@
 
     <!-- NAV MENU -->
     <nav class="menu">
+
         <ul>
             <li><a class="menu-item" href="#home-section">home</a></li>
             <li><a class="menu-item" href="#about-section">sobre</a></li>
             <li><a class="botao-primary" href="#">currículo</a></li>
-            <li><a class="menu-item" href="#">projetos</a></li>
-            <li><a class="menu-item" href="#">contato</a></li>
+            <li><a class="menu-item" href="#projects-section">projetos</a></li>
+            <li><a class="menu-item" href="#contact-section">contato</a></li>
         </ul>
+
+
+        <label class="switch">
+            <input type="checkbox">
+            <span class="slider"></span>
+        </label>
+
     </nav>
 
     <!-- FIRST SECTION -->
@@ -32,7 +40,7 @@
 
             <div class="botoes">
                 <a class="botao-primary btn-1" href="#">Currículo</a>
-                <a class="botao-secondary btn-2" href="#">Contato</a>
+                <a class="botao-secondary btn-2" href="#about-section">Contato</a>
             </div>
         </div>
 
@@ -70,7 +78,7 @@
     </section>
 
     <!-- Education Section -->
-    <section class="education-section">
+    <section class="education-section" id="education-section">
         <div class="education-text">
             <h2 class="education-h2 section-title">habilidades <span>técnicas</span></h2>
             <div class="habilidades">
@@ -111,12 +119,12 @@
     </section>
 
     <!-- Projects Section -->
-    <section class="projects-section">
+    <section class="projects-section" id="projects-section">
         <div class="project-texts">
             <h2 class="project-title section-title">principais <span>projetos</span></h2>
 
             <p class="project-number" id="project-number">#01</p>
-            <h3 class="project-name" id="project-name">project name <span>lorem ipsun</span></h3>
+            <h3 class="project-name" id="project-name">project name <span id="project-span">lorem ipsun</span></h3>
 
             <p class="project-description" id="project-description">Lorem ipsum dolor sit amet, consectetur adipiscing
                 elit. Purus amet eget enim semper porttitor viverra. Tellus sed
@@ -136,9 +144,27 @@
                 <img src="assets\icons\rightarrow.svg" alt="Seta para direita" id="rightarrow">
             </div>
         </div>
-
     </section>
 
+    <section class="contact-section" id="contact-section">
+        <div class="contact-text">
+            <h2 class="section-title">me mande uma <span>mensagem</span></h2>
+            <img src="assets/ilustrations/contact.svg" alt="">
+        </div>
+
+        <form id="form" class="topBefore">
+
+            <input id="name" type="text" placeholder="nome">
+            <input id="email" type="text" placeholder="email">
+            <textarea id="message" type="text" placeholder="mensagem"></textarea>
+            <input id="submit" type="submit" value="enviar">
+
+        </form>
+    </section>
+
+    <!-- JavaScript -->
+    <!-- <script src="javascript/projects.js"></script> -->
+    <script src="javascript/script.js"></script>
 </body>
 
 </html>
