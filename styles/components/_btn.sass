@@ -38,7 +38,7 @@
 
     padding: rem(10px) rem(20px)
     cursor: pointer
-    transition: all 0.3s ease-in-out
+    transition: all 0.2s ease-in-out
     outline: 1.8px solid $blackish
     box-shadow: 0 0 0 0 $blackish
 
@@ -55,3 +55,26 @@
 
         color: $purple
         outline: 1.8px solid $purple
+
+// dark mode
+.dark
+    .botao-primary
+        background: $purple
+        color: $white
+
+        &:hover
+            background: $white
+            color: $purple
+            outline: 1.8px solid $purple
+
+    .botao-secondary
+        background-color: $blackish-dark
+        color: $white-dark
+        text-decoration: none
+        line-height: rem(27px)
+        outline: 1.8px solid $white-dark
+
+        &:hover
+            color: $purple
+            background: $white-dark
+            outline: 1.8px solid $white-dark

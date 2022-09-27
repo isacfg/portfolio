@@ -106,12 +106,16 @@ setProject(projectIndex);
 
 leftArrow.addEventListener('click', () => {
     changeProject('prev');
-    console.log('left');
+    // console.log('left');
 });
 rightArrow.addEventListener('click', () => {
     changeProject('next');
-    console.log('right');
+    // console.log('right');
 });
 arrows.addEventListener('click', () => {
-    console.log('arrow');
+    // console.log('arrow');
 });
+
+// todo
+// detect left and right side of arrow div
+// min height of prject description

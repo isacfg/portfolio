@@ -39,3 +39,29 @@
             p
                 font-size: rem($textFontSize)
                 font-weight: $lightWeight
+
+// dark mode
+.dark
+    .education-section
+        h2
+            color: $white-dark
+            filter: contrast($constrastTitle)
+
+        .habilidades
+            li
+                color: $white-dark
+                filter: contrast($constrastText)
+
+            ul 
+                color: $white-dark
+                filter: contrast($constrastText)
+
+        .formacao
+            .formacao-item
+                .curso
+                    color: $white-dark
+                    filter: contrast(60%)
+
+                p
+                    color: $white-dark
+                    filter: contrast($constrastText)

@@ -7,6 +7,8 @@
     display: flex
     justify-content: center
 
+    
+
     // .toggleWrapper
     //     display: flex
     //     justify-content: flex-end
@@ -29,6 +31,17 @@
                 font-size: rem($navFontSize)
                 @include navText()
 
+
+// dark mode
+.dark
+    .menu
+        ul
+            li
+                .menu-item
+                    color: $white-dark
+                    filter: contrast($constrastTitle)
+
+
 // https://uiverse.io/detail/alexruix/splendid-liger-23
 // other options
 
@@ -37,11 +50,12 @@
 /* The switch - the box around the slider */
 .switch 
   font-size: 17px
-  position: absolute
   // margin-top: 5px
   display: inline-block
   width: 3.5em
   height: 2em
+
+  position: absolute
   right: 50px
   top: 35px
 
