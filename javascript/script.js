@@ -6,6 +6,7 @@ const projectSpan = document.querySelector('#project-span');
 
 const leftArrow = document.querySelector('#leftarrow');
 const rightArrow = document.querySelector('#rightarrow');
+const arrows = document.querySelector('.project-arrows');
 
 const projects = [
     {
@@ -66,7 +67,7 @@ const projects = [
     }
 ]
 
-const projectIndex = 0;
+let projectIndex = 0;
 
 function setProject(index) {
 
@@ -100,5 +101,17 @@ function changeProject(direction) {
 setProject(projectIndex);
 
 // Event Listeners
-leftArrow.addEventListener('click', changeProject('prev'));
-rightArrow.addEventListener('click', changeProject('next'));
+// leftArrow.addEventListener('click', changeProject('prev'));
+// rightArrow.addEventListener('click', changeProject('next'));
+
+leftArrow.addEventListener('click', () => {
+    changeProject('prev');
+    console.log('left');
+});
+rightArrow.addEventListener('click', () => {
+    changeProject('next');
+    console.log('right');
+});
+arrows.addEventListener('click', () => {
+    console.log('arrow');
+});
