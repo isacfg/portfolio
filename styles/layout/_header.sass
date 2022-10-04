@@ -1,46 +1,103 @@
 
+header
 
-
-
-.menu
-    margin-top: rem(30px)
     display: flex
-    justify-content: center
+    justify-content: space-between
+    align-items: center
 
-    
-
-    // .toggleWrapper
-    //     display: flex
-    //     justify-content: flex-end
-
-        
-
-    ul
-        display: flex
-        justify-content: center
-        align-items: center
-        list-style: none
+    max-width: 1100px
+    margin: 0 auto
+    padding: 0 10px
 
 
-        li
-            margin: rem(10px) rem(60px)
 
-            .menu-item
-                color: $blackish
-                font-weight: $mediumWeight
-                font-size: rem($navFontSize)
-                @include navText()
+    .logo
+        img
+            max-width: 65px
 
+    .hamburger-icon
+        font-size: rem(32px)
+        display: none
 
-// dark mode
-.dark
-    .menu
+    .nav-bar
         ul
+            display: flex
             li
-                .menu-item
-                    color: $white-dark
-                    filter: contrast($constrastTitle)
+                list-style: none
+                a
+                    display: block
+                    color: $blackish
+                    font-weight: $mediumWeight
+                    font-size: rem($navFontSize)
+                    text-decoration: none
+                    line-height: rem(27px)
+                    text-align: center
+                    padding: 5px 15px
+                    margin: 0 10px
+                    transition: all 0.2s ease-in-out
 
+                //     &:hover
+                //         color: $purple
+                //         font-weight: $semiBoldWeight
+                        
+
+                // .active
+                //     color: $purple
+                //     font-weight: $semiBoldWeight
+
+
+// menu mobile
+header
+    .mobile-menu
+        position: fixed
+        top: 0
+        right: 0
+        width: 80%
+        height: 100vh
+        background-color: $purple
+        z-index: 100
+
+        display: flex
+        flex-direction: column
+        align-items: center
+        // justify-items: start
+
+        .close
+            position: absolute
+            top: 20px
+            right: 20px
+            font-size: rem(32px)
+            color: $white
+
+        ul
+            margin-top: 100px
+            li
+                list-style: none
+                a
+                    display: block
+                    color: $white
+                    font-weight: $mediumWeight
+                    font-size: rem($navFontSize)
+                    text-decoration: none
+                    line-height: rem(27px)
+                    text-align: center
+                    padding: 5px 15px
+                    margin: 0 10px
+                    transition: all 0.2s ease-in-out
+
+    .oculto
+        display: none !important
+
+
+// dark mode desktop
+.dark
+    header
+        .nav-bar
+            ul
+                li
+                    a
+                        color: $white-dark
+                        filter: contrast($constrastTitle)
 
 // https://uiverse.io/detail/alexruix/splendid-liger-23
 // other options
@@ -51,13 +108,14 @@
 .switch 
   font-size: 17px
   // margin-top: 5px
-  display: inline-block
+  // display: inline-block
   width: 3.5em
   height: 2em
+  // rems
 
-  position: absolute
-  right: 50px
-  top: 35px
+  position: relative
+//   right: 50px
+//   top: 35px
 
   
 

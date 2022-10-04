@@ -49,31 +49,82 @@ table {
   border-spacing: 0;
 }
 
-.menu {
-  margin-top: 1.875rem;
+header {
   display: flex;
-  justify-content: center;
-}
-.menu ul {
-  display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+header .logo img {
+  max-width: 65px;
+}
+header .hamburger-icon {
+  font-size: 2rem;
+  display: none;
+}
+header .nav-bar ul {
+  display: flex;
+}
+header .nav-bar ul li {
   list-style: none;
 }
-.menu ul li {
-  margin: 0.625rem 3.75rem;
-}
-.menu ul li .menu-item {
+header .nav-bar ul li a {
+  display: block;
   color: #303030;
   font-weight: 500;
   font-size: 1rem;
-  font-family: "Poppins", sans-serif;
   text-decoration: none;
   line-height: 1.6875rem;
   text-align: center;
+  padding: 5px 15px;
+  margin: 0 10px;
+  transition: all 0.2s ease-in-out;
 }
 
-.dark .menu ul li .menu-item {
+header .mobile-menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 80%;
+  height: 100vh;
+  background-color: #8A39E1;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+header .mobile-menu .close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 2rem;
+  color: #fff;
+}
+header .mobile-menu ul {
+  margin-top: 100px;
+}
+header .mobile-menu ul li {
+  list-style: none;
+}
+header .mobile-menu ul li a {
+  display: block;
+  color: #fff;
+  font-weight: 500;
+  font-size: 1rem;
+  text-decoration: none;
+  line-height: 1.6875rem;
+  text-align: center;
+  padding: 5px 15px;
+  margin: 0 10px;
+  transition: all 0.2s ease-in-out;
+}
+header .oculto {
+  display: none !important;
+}
+
+.dark header .nav-bar ul li a {
   color: #fff;
   filter: contrast(90%);
 }
@@ -82,12 +133,9 @@ table {
 /* The switch - the box around the slider */
 .switch {
   font-size: 17px;
-  display: inline-block;
   width: 3.5em;
   height: 2em;
-  position: absolute;
-  right: 50px;
-  top: 35px;
+  position: relative;
 }
 
 /* Hide default HTML checkbox */
@@ -190,10 +238,9 @@ input:checked + .slider:before {
   filter: contrast(90%);
 }
 
-@media screen and (max-width: 768px) {
-  .first-section {
-    flex-wrap: wrap;
-  }
+.about-section {
+  display: flex;
+  justify-content: space-between;
 }
 .about-section .about-img {
   display: flex;
@@ -217,7 +264,6 @@ input:checked + .slider:before {
   color: #303030;
 }
 .about-section .about-text-container .about-texts {
-  max-width: 550px;
   margin-bottom: 15px;
 }
 .about-section .about-text-container .about-texts .about-text {
@@ -240,6 +286,11 @@ input:checked + .slider:before {
   filter: contrast(60%);
 }
 
+@media screen and (min-width: 769px) {
+  .about-texts {
+    max-width: 550px;
+  }
+}
 .education-section {
   margin-top: 2.5rem;
 }
@@ -350,6 +401,7 @@ input:checked + .slider:before {
 .projects-section .projects-slider {
   position: relative;
   bottom: 100px;
+  margin-left: 20px;
 }
 .projects-section .projects-slider .drawing-ilus {
   position: relative;
@@ -366,6 +418,7 @@ input:checked + .slider:before {
   position: relative;
   bottom: 25px;
   left: 380px;
+  cursor: pointer;
 }
 .projects-section .projects-slider .project-arrows img {
   width: 14px;
@@ -434,6 +487,88 @@ input:checked + .slider:before {
   filter: contrast(90%);
 }
 
+@media screen and (max-width: 730px) {
+  body {
+    max-width: 100% !important;
+  }
+  header {
+    width: 80% !important;
+  }
+  header .hamburger-icon {
+    display: block !important;
+    font-size: 2rem;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+  }
+  header .nav-bar {
+    display: none !important;
+  }
+  header .oculto {
+    display: none !important;
+  }
+  .projects-section {
+    display: none;
+  }
+  section {
+    flex-direction: column !important;
+    height: auto !important;
+    width: 80% !important;
+  }
+  .first-section {
+    margin-top: 70px !important;
+    align-items: start !important;
+  }
+  .first-section .main-text {
+    width: 80vw !important;
+  }
+  .first-section .main-img {
+    margin-top: -20px !important;
+    align-self: center !important;
+  }
+  .first-section .main-img img {
+    width: 250px !important;
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+  }
+  .about-section {
+    margin-top: 70px !important;
+    flex-direction: column-reverse !important;
+    align-items: center !important;
+    padding: 0 20px !important;
+  }
+  .about-img img {
+    width: 250px !important;
+  }
+  .habilidades {
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    margin-left: 20px !important;
+    margin-top: 20px !important;
+  }
+  .habilidades ul {
+    margin: 0 !important;
+    width: 30vw !important;
+  }
+  .habilidades ul:nth-of-type(2) {
+    margin-left: 40px !important;
+  }
+  .habilidades ul:nth-of-type(3) {
+    align-self: center !important;
+  }
+  .education-section img {
+    width: 195px !important;
+    align-self: center !important;
+    margin-left: -10px !important;
+    margin-top: 30px !important;
+  }
+  .contact-section .contact-text img {
+    width: 280px !important;
+    margin-top: 30px !important;
+  }
+}
 .botao-primary {
   background: #8A39E1;
   color: #fff;
@@ -501,15 +636,15 @@ input:checked + .slider:before {
   outline: 1.8px solid #fff;
 }
 
-html {
+* {
   box-sizing: border-box;
+  text-decoration: none;
   scroll-behavior: smooth;
 }
 
 body {
   font-family: "Poppins", sans-serif;
   margin: 0 auto;
-  max-width: 1400px;
   text-transform: lowercase;
   font-smooth: always;
   -webkit-font-smoothing: antialiased;
@@ -533,10 +668,11 @@ section {
   max-width: 1100px;
   height: 65vh;
   margin: 0 auto;
+  padding: 0 10px;
 }
 section .section-title {
   font-weight: 600;
-  font-size: 1.5rem;
+  font-size: 1.625rem;
   color: #303030;
   line-height: 2.25rem;
 }

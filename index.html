@@ -7,29 +7,69 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Isaac F.</title>
 
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"> -->
     <link rel="stylesheet" href="styles\style.css">
 </head>
 
-<body class="dark">
+<body class="light">
 
-    <!-- NAV MENU -->
-    <nav class="menu">
+    <header>
+        <div class="logo">
+            <img src="assets/logo.svg" alt="Isaac F. Logo">
+        </div>
+        <ion-icon class="hamburger-icon" name="menu"></ion-icon>
 
-        <ul>
-            <li><a class="menu-item" href="#home-section">home</a></li>
-            <li><a class="menu-item" href="#about-section">sobre</a></li>
-            <li><a class="botao-primary" href="#">currículo</a></li>
-            <li><a class="menu-item" href="#projects-section">projetos</a></li>
-            <li><a class="menu-item" href="#contact-section">contato</a></li>
-        </ul>
+        <nav class="nav-bar">
+            <ul>
+                <li>
+                    <a class="" href="#home-section">home</a>
+                </li>
+                <li>
+                    <a class="" href="#about-section">sobre</a>
+                </li>
+
+                <li>
+                    <a class="" href="#projects-section">projetos</a>
+                </li>
+                <li>
+                    <a class="" href="#contact-section">contato</a>
+                </li>
+                <label class="switch">
+                    <input id="toggleTheme" type="checkbox">
+                    <span class="slider"></span>
+                </label>
+            </ul>
+        </nav>
+
+        <nav class="mobile-menu oculto">
+            <ion-icon class="close" name="close"></ion-icon>
+
+            <ul>
+                <li>
+                    <a class="" href="#home-section">home</a>
+                </li>
+                <li>
+                    <a class="" href="#about-section">sobre</a>
+                </li>
+
+                <li>
+                    <a class="" href="#projects-section">projetos</a>
+                </li>
+                <li>
+                    <a class="" href="#contact-section">contato</a>
+                </li>
+                <label class="switch">
+                    <input id="toggleTheme" type="checkbox">
+                    <span class="slider"></span>
+                </label>
+            </ul>
+        </nav>
+
+    </header>
 
 
-        <label class="switch">
-            <input type="checkbox">
-            <span class="slider"></span>
-        </label>
 
-    </nav>
+
 
     <!-- FIRST SECTION -->
     <section class="first-section" id="home-section">
@@ -136,7 +176,7 @@
             <p class="project-tech" id="project-tech">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 
         </div>
-        <div class="projects-slider">
+        <!-- <div class="projects-slider">
             <img class="drawing-ilus" src="assets/ilustrations/projects.svg" alt="">
             <img src="assets/placeholder.png" alt="" id="project-image">
 
@@ -144,7 +184,7 @@
                 <img src="assets\icons\leftarrow.svg" alt="Seta para esquerda" id="leftarrow">
                 <img src="assets\icons\rightarrow.svg" alt="Seta para direita" id="rightarrow">
             </div>
-        </div>
+        </div> -->
     </section>
 
     <section class="contact-section" id="contact-section">
@@ -164,9 +204,13 @@
     </section>
 
     <!-- JavaScript -->
-    <!-- <script src="javascript/projects.js"></script> -->
     <script src="js/darkMode.js"></script>
-    <script src="js/script.js"></script>
+    <script src="js/projects.js"></script>
+    <script src="js/nav.js"></script>
+
+    <!-- Icons -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>
 
 </html>
