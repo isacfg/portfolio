@@ -1,0 +1,25 @@
+ 
+TODO:
+Add Icons
+Add project images + links
+Forms using bulma
+Add dark mode images
+Add curriculo
+Add scroll animations
+
+
+#0.4v
+Added Changelog
+Added New Logo
+Fixed Contact Btn
+Added Mobile Menu Animation
+Fixed Mobile DarkMode Switch
+Added Sync between switches mobile and desktop
+Added Comments in DarkMode Javascript
+
+
+#0.3v
+Fixed Slider
+Added Todo
+Fix Margins Mobile
+Temp Removed darkmode toggle mobile
