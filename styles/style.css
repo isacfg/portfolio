@@ -58,9 +58,10 @@ header {
   padding: 0 10px;
 }
 header .logo {
-  font-weight: 700;
-  font-size: 1.5rem;
-  color: #303030;
+  user-select: none;
+}
+header .logo img {
+  width: 60px;
 }
 header .hamburger-icon {
   font-size: 2rem;
@@ -84,12 +85,15 @@ header .nav-bar ul li a {
   margin: 0 10px;
   transition: all 0.2s ease-in-out;
 }
+header .nav-bar ul li a:hover {
+  color: #8A39E1;
+}
 
 header .mobile-menu {
   position: fixed;
   top: 0;
   right: 0;
-  width: 80vw;
+  width: 60vw;
   height: 100vh;
   background-color: #8A39E1;
   z-index: 100;
@@ -165,6 +169,10 @@ header .oculto {
 .dark header .nav-bar ul li a {
   color: #fff;
   filter: contrast(90%);
+}
+.dark header .nav-bar ul li a:hover {
+  color: #8A39E1;
+  filter: brightness(130%);
 }
 
 /* From uiverse.io by @alexruix */

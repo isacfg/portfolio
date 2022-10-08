@@ -1,6 +1,8 @@
 
 header
-
+    // position: sticky 
+    // top: 0
+  
     display: flex
     justify-content: space-between
     align-items: center
@@ -10,11 +12,15 @@ header
     padding: 0 10px
 
 
-
     .logo
-      font-weight: $boldWeight
-      font-size: 1.5rem
-      color: $blackish
+        user-select: none
+        img
+            width: 60px
+
+    // .logo-text
+    //   font-weight: $boldWeight
+    //   font-size: 1.5rem
+    //   color: $blackish
 
     .hamburger-icon
         font-size: rem(32px)
@@ -37,15 +43,9 @@ header
                     margin: 0 10px
                     transition: all 0.2s ease-in-out
 
-                //     &:hover
-                //         color: $purple
-                //         font-weight: $semiBoldWeight
+                    &:hover
+                        color: $purple
                         
-
-                // .active
-                //     color: $purple
-                //     font-weight: $semiBoldWeight
-
 
 // menu mobile
 header
@@ -54,7 +54,7 @@ header
         top: 0
         // right: -80vw
         right: 0
-        width: 80vw
+        width: 60vw
         height: 100vh
         background-color: $purple
         z-index: 100
@@ -123,6 +123,7 @@ header
                     margin: 0 10px
                     transition: all 0.2s ease-in-out
 
+
     .oculto
         display: none !important
 
@@ -143,6 +144,10 @@ header
                     a
                         color: $white-dark
                         filter: contrast($constrastTitle)
+
+                        &:hover
+                            color: $purple
+                            filter: brightness($brightnessPurple)
 
 
 /* From uiverse.io by @alexruix */

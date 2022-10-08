@@ -2,10 +2,41 @@ const checkbox = document.querySelector('#toggleTheme');
 const checkboxMobile = document.querySelector('#toggleThemeMobile');
 const body = document.querySelector('body');
 
+const logoImg = document.querySelector('#logoImg');
+const allImgs = document.querySelectorAll('img');
+
+
+function changeImgs() {
+
+
+    allImgs.forEach(img => {
+        if (body.classList.contains('dark')) {
+
+            img.src = img.src.replace('light', 'dark');
+
+        }
+        else {
+            img.src = img.src.replace('dark', 'light');
+        }
+    })
+
+
+    // if (body.classList.contains('dark')) {
+    //     logoImg.src = 'assets/logo/logo-dark.svg';
+
+
+    // }
+    // else {
+    //     logoImg.src = 'assets/logo/logo-light.svg';
+    // }
+}
+
 function toggleTheme(e) {
     // console.log(e)
     if (e.target.checked) {
         body.classList.replace('dark', 'light');
+        // muda as imagens
+        changeImgs();
         // salva o tema no localStorage
         localStorage.setItem('theme', 'light');
 
@@ -17,10 +48,11 @@ function toggleTheme(e) {
         if (e.target.id === 'toggleTheme' && e.target.checked) {
             checkboxMobile.checked = true;
         }
-      
+
     }
     else {
         body.classList.replace('light', 'dark');
+        changeImgs();
         localStorage.setItem('theme', 'dark');
 
 
@@ -31,9 +63,10 @@ function toggleTheme(e) {
         if (e.target.id === 'toggleTheme' && !e.target.checked) {
             checkboxMobile.checked = false;
         }
-        
+
     }
 }
+
 
 // On load
 // Verifica se o tema está salvo no localStorage
@@ -59,6 +92,8 @@ else {
     checkbox.defaultChecked = true;
     checkboxMobile.defaultChecked = true;
 }
+
+changeImgs();
 
 // Event Listeners
 checkbox.addEventListener('change', toggleTheme);
