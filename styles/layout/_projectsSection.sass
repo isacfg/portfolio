@@ -48,6 +48,24 @@
             color: $blackish
             line-height: 1.5
 
+        .project-links
+            margin-top: rem(20px)
+
+
+            .project-icon
+                user-select: none
+                color: $blackish
+                font-size: rem(32px)
+                transition: color 0.2s ease-in-out
+
+                &:hover
+                    color: $purple
+
+            #project-github
+                margin-right: rem(20px)
+                       
+           
+
 
     .projects-slider
 
@@ -93,6 +111,12 @@
 // dark mode
 .dark
     .projects-section
+
+        .project-texts
+
+            .project-number
+                filter: brightness($brightnessPurple) contrast(100%)
+
         #project-span
             color: $purple
 
@@ -122,6 +146,15 @@
         .project-tech
             color: $white-dark
             filter: contrast($constrastText)
+
+        .project-icon
+            color: $white !important
+            filter: contrast($constrastText)
+
+            &:hover
+                color: $purple !important
+                filter: contrast(100%)
+
 
         .project-arrows
 

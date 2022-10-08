@@ -37,6 +37,30 @@
                 color: $blackish
                 line-height: 1.5
 
+    // button and icon container
+    .about-sub
+        // display: none
+        display: flex
+        align-items: center
+        justify-content: space-between
+
+        .social-icons
+
+            .personal-icon
+                font-size: rem(32px)
+                color: $blackish
+
+                user-select: none
+                color: $blackish
+                font-size: rem(32px)
+                transition: color 0.2s ease-in-out
+
+                &:hover
+                    color: $purple
+
+            .github
+                margin-right: rem(20px)
+
 // dark mode
 .dark
     .about-section
@@ -52,6 +76,18 @@
                 color: $white-dark
                 filter: contrast($constrastText)
 
+        .personal-icon
+            color: $white !important
+            filter: contrast($constrastText)
+
+            &:hover
+                color: $purple !important
+                filter: contrast(100%)
+
 @media screen and (min-width: 769px) 
     .about-texts
         max-width: 550px
+
+    .about-sub
+        // display: none
+        max-width: 500px

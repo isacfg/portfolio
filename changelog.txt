@@ -1,11 +1,22 @@
  
 TODO:
-Add Icons
+Add dark mode images
 Add project images + links
 Forms using bulma
-Add dark mode images
 Add curriculo
 Add scroll animations
+Unique project page
+Change Font to Hurme Geometric Sans 3
+
+
+#0.5v
+Added Media Queries Folder Structure
+Added Portfolio to projects
+Added Project Icons
+Added About Icons
+Added Icons DarkMode Support
+Added Better Color Support in DarkMode
+Fixed margins between sections mobile
 
 
 #0.4v
