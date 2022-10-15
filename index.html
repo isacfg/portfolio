@@ -7,14 +7,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Isaac F.</title>
 
-    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"> -->
     <link rel="stylesheet" href="styles\style.css">
+    <link rel="icon" type="image/x-icon" href="assets\logo\logo-light.svg">
 </head>
 
 <body class="light">
 
     <header>
-        <div class="logo">
+        <div class="logo hidden">
             <a href="#home-section">
                 <img id="logoImg" src="assets/logo/logo-light.svg" alt="Isaac F. Logo">
             </a>
@@ -76,7 +76,7 @@
 
 
     <!-- FIRST SECTION -->
-    <section class="first-section" id="home-section">
+    <section class="first-section hidden" id="home-section">
         <div class="main-text">
             <h3 class="main-h3">oii!, meu nome é</h3>
             <h1 class="main-h1">Isaac</h1>
@@ -94,7 +94,7 @@
     </section>
 
     <!-- ABOUT SECTION -->
-    <section class="about-section" id="about-section">
+    <section class="about-section hidden" id="about-section">
         <div class="about-img">
             <img src="assets/ilustrations/about-light.svg" alt="Ilustração sobre mim">
         </div>
@@ -133,7 +133,7 @@
     </section>
 
     <!-- Education Section -->
-    <section class="education-section" id="education-section">
+    <section class="education-section hidden" id="education-section">
         <div class="education-text">
             <h2 class="education-h2 section-title">habilidades <span>técnicas</span></h2>
             <div class="habilidades">
@@ -174,7 +174,7 @@
     </section>
 
     <!-- Projects Section -->
-    <section class="projects-section" id="projects-section">
+    <section class="projects-section hidden" id="projects-section">
         <div class="project-texts">
             <h2 class="project-title section-title">principais <span>projetos</span></h2>
 
@@ -213,7 +213,8 @@
         </div>
     </section>
 
-    <section class="contact-section" id="contact-section">
+    <!-- Contact Section -->
+    <section class="contact-section hidden" id="contact-section">
         <div class="contact-text">
             <h2 class="section-title">me mande uma <span>mensagem</span></h2>
             <img src="assets/ilustrations/contact-light.svg" alt="">
@@ -233,6 +234,8 @@
     <script src="js/darkMode.js"></script>
     <script src="js/projects.js"></script>
     <script src="js/nav.js"></script>
+    <!-- defer makes the javascript load after the elements in the dom -->
+    <!-- <script defer src="js/scrollAnimations.js"></script> -->
 
     <!-- Icons -->
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
