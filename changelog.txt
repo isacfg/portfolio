@@ -1,4 +1,7 @@
- 
+
+Moving to Vue + Full redesign
+Goodbye 😢
+
 TODO:
 Add project images + links
 Forms using bulma
