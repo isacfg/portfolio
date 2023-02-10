@@ -3,7 +3,7 @@
     <div class="navbar bg-base-100">
       <div class="flex-1">
         <a
-          class="btn-ghost btn text-base font-semibold normal-case hover:bg-transparent hover:text-purple"
+          class="transition-custom btn-ghost btn text-base font-semibold normal-case hover:scale-110 hover:bg-transparent hover:text-purple"
           >Isaac F.</a
         >
       </div>
@@ -80,7 +80,7 @@
         <a class="btn-ghost btn text-xl normal-case">Isaac F.</a>
       </div>
       <div class="navbar-end">
-        <label class="swap swap-rotate">
+        <label class="swap-rotate swap">
           <!-- this hidden checkbox controls the state -->
           <input type="checkbox" />
 
