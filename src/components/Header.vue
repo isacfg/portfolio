@@ -3,31 +3,45 @@
     <div class="navbar bg-base-100">
       <div class="flex-1">
         <a
-          class="transition-custom btn-ghost btn text-base font-semibold normal-case hover:scale-110 hover:bg-transparent hover:text-purple"
+          class="transition-custom btn-ghost btn text-xl font-semibold normal-case text-black hover:scale-110 hover:bg-transparent hover:text-purple"
           >Isaac F.</a
         >
       </div>
       <div class="flex-none">
         <ul class="menu menu-horizontal px-1 font-medium">
           <li class="hover:text-purple">
-            <RouterLink class="hover:bg-transparent" to="/">Home</RouterLink>
+            <RouterLink
+              class="text-black hover:bg-transparent hover:text-purple"
+              to="/"
+              >Home</RouterLink
+            >
           </li>
           <li class="hover:text-purple">
             <!-- <RouterLink to="/">curriculo</RouterLink> -->
-            <a class="hover:bg-transparent" href="#">Currículo</a>
+            <a
+              class="text-black hover:bg-transparent hover:text-purple"
+              href="#"
+              >Currículo</a
+            >
           </li>
           <li class="hover:text-purple">
-            <RouterLink class="hover:bg-transparent" to="/projects"
+            <RouterLink
+              class="text-black hover:bg-transparent hover:text-purple"
+              to="/projects"
               >Projetos</RouterLink
             >
           </li>
           <li class="hover:text-purple">
-            <RouterLink class="hover:bg-transparent" to="/contact"
+            <RouterLink
+              class="text-black hover:bg-transparent hover:text-purple"
+              to="/contact"
               >Contato</RouterLink
             >
           </li>
           <li class="hover:text-purple">
-            <a class="hover:bg-transparent" href="">Tema</a>
+            <a class="text-black hover:bg-transparent hover:text-purple" href=""
+              >Tema</a
+            >
           </li>
         </ul>
       </div>
@@ -57,19 +71,21 @@
             tabindex="0"
             class="dropdown-content menu rounded-box menu-compact mt-3 w-52 bg-base-100 p-2 shadow">
             <li class="hover:text-purple">
-              <RouterLink class="hover:bg-transparent" to="/">Home</RouterLink>
+              <RouterLink class="text-black hover:bg-transparent" to="/"
+                >Home</RouterLink
+              >
             </li>
             <li class="hover:text-purple">
               <!-- <RouterLink to="/">curriculo</RouterLink> -->
-              <a class="hover:bg-transparent" href="#">Currículo</a>
+              <a class="text-black hover:bg-transparent" href="#">Currículo</a>
             </li>
             <li class="hover:text-purple">
-              <RouterLink class="hover:bg-transparent" to="/projects"
+              <RouterLink class="text-black hover:bg-transparent" to="/projects"
                 >Projetos</RouterLink
               >
             </li>
             <li class="hover:text-purple">
-              <RouterLink class="hover:bg-transparent" to="/contact"
+              <RouterLink class="text-black hover:bg-transparent" to="/contact"
                 >Contato</RouterLink
               >
             </li>
