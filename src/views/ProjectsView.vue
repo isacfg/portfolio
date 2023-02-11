@@ -1,24 +1,70 @@
 <template>
   <Header />
 
-  <div class="about">
-    <h1>This is an projects page</h1>
+  <div class="container mx-auto mt-24 px-4 text-center">
+    <h2 class="text-5xl font-semibold text-black">
+      Principais <span class="text-purple">Projetos</span>
+    </h2>
+  </div>
+
+  <div class="container mx-auto mt-24 px-4">
+    <div v-for="(project, index) in projectsStore.projects" :key="project.id">
+      <ProjectCardHome
+        :type="index % 2 === 0 ? 'text-right' : 'text-left'"
+        :isFirst="index === 0"
+        :projectName="project.name"
+        :projectDescription="project.description"
+        :projectTechs="project.tech"
+        :projectLink="project.link"
+        :projectPhoto="project.photo" />
+    </div>
   </div>
 
   <Footer />
 </template>
 
-<style>
-@media (min-width: 1024px) {
-  .about {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-  }
-}
-</style>
+<style></style>
 
-<script setup>
+<script>
 import Header from '../components/Header.vue'
 import Footer from '../components/Footer.vue'
+import Button from '@/components/Button.vue'
+import ProjectCardHome from '@/components/ProjectCardHome.vue'
+
+import { mapStores } from 'pinia'
+import useProjectsStore from '@/stores/projects'
+
+// export default {
+//   name: 'Projects',
+//   components: {
+//     Header,
+//     Button,
+//     ProjectCardHome,
+//     Footer,
+//   },
+//   data() {
+//     return {}
+//   },
+//   computed: {
+//     ...mapStores(useProjectsStore),
+//   },
+//   methods: {},
+// }
+
+export default {
+  name: 'Projects',
+  components: {
+    Header,
+    Footer,
+    Button,
+    ProjectCardHome,
+  },
+  data() {
+    return {}
+  },
+  computed: {
+    ...mapStores(useProjectsStore),
+  },
+  methods: {},
+}
 </script>
