@@ -21,7 +21,7 @@
           </div>
         </div>
         <div class="texts-b">
-          <p class="text-xl font-normal max-md:text-center max-md:text-base">
+          <p class="text-xl font-normal max-md:text-left max-md:text-sm">
             👩🏻‍💻 Trabalhando como frontend developer na
             <a
               href="https://www.ejectufrn.com.br/"
@@ -30,7 +30,7 @@
               >@EJECT</a
             >
           </p>
-          <p class="text-xl font-normal max-md:text-center max-md:text-base">
+          <p class="text-xl font-normal max-md:text-left max-md:text-sm">
             📚 Estudando Ciências e Tecnologia na
             <a
               class="transition-custom text-purple hover:scale-110"
@@ -50,21 +50,21 @@
       class="socials container mx-auto mt-16 flex w-full items-center gap-x-6 px-4">
       <div class="line flex-1 border border-black"></div>
       <div class="socials-icons flex gap-x-6">
-        <a href="">
+        <a target="_blank" href="https://www.behance.net/isaacf">
           <img
             src="../assets/icons/behance-light.svg"
-            class=" max-md:w-6"
+            class="max-md:w-6"
             alt=""
             srcset="" />
         </a>
-        <a href="">
+        <a target="_blank" href="https://github.com/isacfg">
           <img
             src="../assets/icons/github-light.svg"
             class="max-md:w-6"
             alt=""
             srcset="" />
         </a>
-        <a href="">
+        <a target="_blank" href="https://www.linkedin.com/in/isaacfig/">
           <img
             src="../assets/icons/linkedin-light.svg"
             class="max-md:w-6"
@@ -75,17 +75,25 @@
       <div class="line flex-1 border border-black"></div>
     </div>
   </div>
+
+  <!-- projects -->
+  <div class="container mx-auto mt-14 px-4">
+    <ProjectCardHome type="text-left" isFirst="true" />
+    <ProjectCardHome type="text-right" isFirst="true" />
+  </div>
 </template>
 
 <script>
 import Header from '../components/Header.vue'
-import Button from '../components/btns/Button.vue'
+import Button from '../components/Button.vue'
+import ProjectCardHome from '../components/ProjectCardHome.vue'
 
 export default {
   name: 'Home',
   components: {
     Header,
     Button,
+    ProjectCardHome,
   },
   data() {
     return {}
