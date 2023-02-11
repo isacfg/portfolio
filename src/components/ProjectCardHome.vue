@@ -5,7 +5,7 @@
       'flex-row-reverse': type === 'text-left',
       'mt-48': isFirst === 'true',
     }">
-    <div class="left mx-auto w-1/2 max-md:w-full">
+    <div class="left bob-on-hover mx-auto w-1/2 max-md:w-full">
       <img
         src="../assets/placeholder.png"
         alt="Project Photo"
@@ -15,13 +15,14 @@
         }" />
     </div>
     <div
-      class="right flex max-h-full w-1/2 flex-col justify-between py-4 max-md:mt-8 max-md:w-full max-md:px-2"
+      class="right flex max-h-full w-1/2 flex-col justify-between pb-4 pt-2 max-md:mt-8 max-md:w-full max-md:px-2 max-md:pt-4"
       :class="{
         'mr-auto': type === 'text-left',
         'ml-auto': type === 'text-right',
       }">
       <div class="project-name">
         <h2 class="text-2xl font-medium text-black">
+          <!-- {{ projectsStore.projects }} -->
           {{ projectName }}
         </h2>
         <p class="mt-4 text-base font-normal leading-7 text-gray">
@@ -50,6 +51,9 @@
 </template>
 
 <script>
+// import { mapStores } from 'pinia'
+// import useProjectsStore from '@/stores/projects'
+
 export default {
   name: 'ProjectCardHome',
   props: {
@@ -85,10 +89,11 @@ export default {
     },
   },
   data() {
-    return {
-      imagePath: '../assets/placeholder.png',
-    }
+    return {}
   },
+  // computed: {
+  //   ...mapStores(useProjectsStore),
+  // },
   methods: {},
 }
 </script>

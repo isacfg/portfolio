@@ -87,9 +87,21 @@
 
   <!-- projects -->
   <div class="container mx-auto mt-14 px-4">
-    <ProjectCardHome type="text-right" isFirst="true" />
-    <ProjectCardHome type="text-left" isFirst="false" />
-    <ProjectCardHome type="text-right" isFirst="false" />
+    <!-- props -->
+    <!-- type, isFirst, photo, projectName, projectDescription, projectTechs, projectLink -->
+
+    <div
+      v-for="(project, index) in projectsStore.projects.slice(0, 3)"
+      :key="project.id">
+      <ProjectCardHome
+        :type="index % 2 === 0 ? 'text-right' : 'text-left'"
+        :isFirst="index === 0"
+        :projectName="project.name"
+        :projectDescription="project.description"
+        :projectTechs="project.tech"
+        :projectLink="project.link"
+        :projectPhoto="project.photo" />
+    </div>
   </div>
 
   <div class="container mx-auto mt-16 mb-8 w-full text-center max-md:mt-6">
@@ -105,10 +117,13 @@
 </template>
 
 <script>
-import Header from '../components/Header.vue'
-import Button from '../components/Button.vue'
-import ProjectCardHome from '../components/ProjectCardHome.vue'
-import Footer from '../components/Footer.vue'
+import Header from '@/components/Header.vue'
+import Button from '@/components/Button.vue'
+import ProjectCardHome from '@/components/ProjectCardHome.vue'
+import Footer from '@/components/Footer.vue'
+
+import { mapStores } from 'pinia'
+import useProjectsStore from '@/stores/projects'
 
 export default {
   name: 'Home',
@@ -120,6 +135,9 @@ export default {
   },
   data() {
     return {}
+  },
+  computed: {
+    ...mapStores(useProjectsStore),
   },
   methods: {},
 }
