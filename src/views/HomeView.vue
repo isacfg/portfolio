@@ -25,7 +25,7 @@
             👩🏻‍💻 Trabalhando como frontend developer na
             <a
               href="https://www.ejectufrn.com.br/"
-              class="transition-custom text-purple hover:scale-110"
+              class="transition-custom bob-on-hover text-purple"
               target="_blank"
               >@EJECT</a
             >
@@ -33,7 +33,7 @@
           <p class="text-xl font-normal max-md:text-left max-md:text-sm">
             📚 Estudando Ciências e Tecnologia na
             <a
-              class="transition-custom text-purple hover:scale-110"
+              class="transition-custom bob-on-hover text-purple"
               target="_blank"
               href="https://www.ufrn.br/"
               >@UFRN</a
@@ -50,21 +50,30 @@
       class="socials container mx-auto mt-16 flex w-full items-center gap-x-6 px-4">
       <div class="line flex-1 border border-black"></div>
       <div class="socials-icons flex gap-x-6">
-        <a target="_blank" href="https://www.behance.net/isaacf">
+        <a
+          target="_blank"
+          class="bob-on-hover hover:text-purple"
+          href="https://www.behance.net/isaacf">
           <img
             src="../assets/icons/behance-light.svg"
             class="max-md:w-6"
             alt=""
             srcset="" />
         </a>
-        <a target="_blank" href="https://github.com/isacfg">
+        <a
+          target="_blank"
+          class="bob-on-hover hover:text-purple"
+          href="https://github.com/isacfg">
           <img
             src="../assets/icons/github-light.svg"
             class="max-md:w-6"
             alt=""
             srcset="" />
         </a>
-        <a target="_blank" href="https://www.linkedin.com/in/isaacfig/">
+        <a
+          target="_blank"
+          class="bob-on-hover hover:text-purple"
+          href="https://www.linkedin.com/in/isaacfig/">
           <img
             src="../assets/icons/linkedin-light.svg"
             class="max-md:w-6"
@@ -78,15 +87,28 @@
 
   <!-- projects -->
   <div class="container mx-auto mt-14 px-4">
-    <ProjectCardHome type="text-left" isFirst="true" />
     <ProjectCardHome type="text-right" isFirst="true" />
+    <ProjectCardHome type="text-left" isFirst="false" />
+    <ProjectCardHome type="text-right" isFirst="false" />
   </div>
+
+  <div class="container mx-auto mt-16 mb-8 w-full text-center max-md:mt-6">
+    <a
+      href=""
+      class="bob-on-hover text-base font-semibold text-black underline hover:text-purple"
+      >Ver mais</a
+    >
+  </div>
+
+  <!-- FOOTER -->
+  <Footer />
 </template>
 
 <script>
 import Header from '../components/Header.vue'
 import Button from '../components/Button.vue'
 import ProjectCardHome from '../components/ProjectCardHome.vue'
+import Footer from '../components/Footer.vue'
 
 export default {
   name: 'Home',
@@ -94,6 +116,7 @@ export default {
     Header,
     Button,
     ProjectCardHome,
+    Footer,
   },
   data() {
     return {}

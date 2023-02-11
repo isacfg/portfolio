@@ -39,9 +39,9 @@
             >
           </li>
           <li class="hover:text-purple">
-            <a class="text-black hover:bg-transparent hover:text-purple" href=""
-              >Tema</a
-            >
+            <p class="text-black hover:bg-transparent hover:text-purple">
+              Tema
+            </p>
           </li>
         </ul>
       </div>

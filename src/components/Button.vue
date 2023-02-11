@@ -1,6 +1,6 @@
 <template>
   <a
-    class="transition-custom btn rounded-3xl border-purple bg-purple px-4 text-base font-semibold capitalize text-purple outline-none hover:scale-110 max-md:text-sm"
+    class="bob-on-hover btn rounded-3xl border-purple bg-purple px-4 text-base font-semibold capitalize text-purple outline-none max-md:text-sm"
     :class="{
       'px-6 text-white hover:border-purple hover:bg-white hover:text-purple':
         type === 'btn-primary',
@@ -31,10 +31,4 @@ export default {
 }
 </script>
 
-<style>
-.transition-custom {
-  transition-property: all;
-  transition-duration: 200ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-}
-</style>
+<style></style>

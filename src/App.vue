@@ -7,9 +7,9 @@ import { RouterView } from 'vue-router'
 </template>
 
 <style>
-span {
+/* span {
   color: #543cd9;
-}
+} */
 
 .transition-custom {
   transition-property: all;
