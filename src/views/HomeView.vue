@@ -17,7 +17,11 @@
           </div>
           <div class="btns flex items-center gap-x-24 max-md:gap-x-10">
             <Button text="Currículo" type="btn-primary" />
-            <Button text="ver projetos" type="btn-secondary" />
+            <Button
+              to="/projects"
+              :isRouter="true"
+              text="ver projetos"
+              type="btn-secondary" />
           </div>
         </div>
         <div class="texts-b">
@@ -42,7 +46,11 @@
         </div>
       </div>
       <div class="right ml-auto max-md:mx-auto max-md:my-auto">
-        <img src="../assets/ilus.svg" class="max-md:w-3/4" alt="" srcset="" />
+        <img
+          src="../assets/ilus.svg"
+          class="bob-on-hover max-md:w-3/4"
+          alt=""
+          srcset="" />
       </div>
     </div>
     <!-- SOCIALS -->
@@ -107,7 +115,7 @@
   <div class="container mx-auto mt-16 mb-8 w-full text-center max-md:mt-6">
     <a
       href=""
-      class="bob-on-hover text-base font-semibold text-black underline hover:text-purple"
+      class="bob-on-hover border-b-2 border-purple text-base font-semibold text-black hover:text-purple"
       >Ver mais</a
     >
   </div>
@@ -142,3 +150,9 @@ export default {
   methods: {},
 }
 </script>
+
+<style>
+a.router-link-active {
+  color: rgb(84 60 217);
+}
+</style>
