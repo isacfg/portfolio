@@ -8,19 +8,26 @@
           Meu nome é <span class="text-purple">Isaac</span> 👋😊
         </h1>
         <p class="font-regular mt-4 text-base leading-7 text-black">
-          I’m a software engineer specializing in building (and occasionally
-          designing) exceptional digital experiences . Currently, I’m focused on
-          building accessible, human-centered produts at Upstatement.
+          Apaixonado por design e tecnologia, impulsionado pela inovação
         </p>
         <p class="font-regular mt-4 text-base leading-7 text-black">
-          I’m a software engineer specializing in building (and occasionally
-          designing) exceptional digital experiences . Currently, I’m focused on
-          building accessible, human-centered produts at Upstatement.
+          Desenvolvedor frontend especializado em Vue.js. Comecei a minha
+          carreira como desenvolvedor web há mais de 3 anos e, desde então,
+          tenho me dedicado ao desenvolvimento de sites e sistemas utilizando
+          tecnologias como HTML, CSS, JavaScript e frameworks como o Bootstrap,
+          Bulma e Tailwind.
+        </p>
+        <p class="font-regular mt-4 text-base leading-7 text-black">
+          Atualmente sou estudante de Ciência e Tecnologia da Universidade
+          Federal do Rio Grande do Norte e desenvolvedor front-end na EJECT
         </p>
       </div>
       <div class="btns-socials mt-8 flex items-center justify-between">
         <div class="btns">
-          <Button text="currículo" type="btn-secondary" />
+          <Button
+            text="currículo"
+            :to="projectsStore.resume"
+            type="btn-secondary" />
         </div>
         <div class="socials-icons flex gap-x-6 pr-8 max-md:pr-0">
           <a
@@ -125,8 +132,23 @@
 
 <style></style>
 
-<script setup>
+<script>
 import Header from '../components/Header.vue'
 import Footer from '../components/Footer.vue'
 import Button from '../components/Button.vue'
+
+import { mapStores } from 'pinia'
+import useProjectsStore from '@/stores/projects'
+
+export default {
+  components: {
+    Header,
+    Button,
+    Footer,
+  },
+
+  computed: {
+    ...mapStores(useProjectsStore),
+  },
+}
 </script>
