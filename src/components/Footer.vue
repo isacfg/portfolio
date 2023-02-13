@@ -5,7 +5,10 @@
       <p>made with ❤️ by Isaac F.</p>
     </div>
     <div class="right flex gap-x-4 max-md:mt-3">
-      <a href="" target="_blank" class="bob-on-hover hover:text-purple">
+      <a
+        :href="projectsStore.resume"
+        target="_blank"
+        class="bob-on-hover hover:text-purple">
         📩 Currículo
       </a>
       <a
@@ -33,7 +36,14 @@
 <style scoped></style>
 
 <script>
+import { mapStores } from 'pinia'
+import useProjectsStore from '@/stores/projects'
+
 export default {
   name: 'Footer',
+
+  computed: {
+    ...mapStores(useProjectsStore),
+  },
 }
 </script>
