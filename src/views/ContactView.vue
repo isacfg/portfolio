@@ -1,5 +1,5 @@
 <template>
-  <Header />
+  <!-- <Header /> -->
   <div
     class="container mx-auto mt-24 flex flex-row px-24 max-md:mt-12 max-md:flex-col max-md:px-6">
     <div class="left w-3/5 max-md:w-full">
@@ -132,14 +132,14 @@
       </div>
     </div>
   </div>
-  <Footer />
+  <!-- <Footer /> -->
 </template>
 
 <style></style>
 
 <script>
-import Header from '../components/Header.vue'
-import Footer from '../components/Footer.vue'
+// import Header from '../components/Header.vue'
+// import Footer from '../components/Footer.vue'
 import Button from '../components/Button.vue'
 
 // :to="projectsStore.resume"
@@ -148,9 +148,9 @@ import useProjectsStore from '@/stores/projects'
 
 export default {
   components: {
-    Header,
+    // Header,
     Button,
-    Footer,
+    // Footer,
   },
 
   computed: {

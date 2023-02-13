@@ -1,5 +1,5 @@
 <template>
-  <Header />
+  <!-- <Header /> -->
 
   <div
     class="container mx-auto mt-24 px-4 text-center max-md:mt-12 max-md:px-6">
@@ -21,14 +21,14 @@
     </div>
   </div>
 
-  <Footer />
+  <!-- <Footer /> -->
 </template>
 
 <style></style>
 
 <script>
-import Header from '../components/Header.vue'
-import Footer from '../components/Footer.vue'
+// import Header from '../components/Header.vue'
+// import Footer from '../components/Footer.vue'
 import Button from '@/components/Button.vue'
 import ProjectCardHome from '@/components/ProjectCardHome.vue'
 
@@ -55,8 +55,8 @@ import useProjectsStore from '@/stores/projects'
 export default {
   name: 'Projects',
   components: {
-    Header,
-    Footer,
+    // Header,
+    // Footer,
     Button,
     ProjectCardHome,
   },
