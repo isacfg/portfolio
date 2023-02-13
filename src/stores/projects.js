@@ -2,6 +2,7 @@ import { defineStore } from 'pinia'
 
 export default defineStore('projects', {
   state: () => ({
+    resume: 'https://drive.google.com/file/d/1-3r8xZ2bAcQ2lABl0Xv572TWA-PFFox-/view?usp=sharing',
     projects: [
       {
         id: 1,
@@ -52,6 +53,6 @@ export default defineStore('projects', {
         link: 'https://google.com',
       }
 
-    ]
+    ],
   }),
 })

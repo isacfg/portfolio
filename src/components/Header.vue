@@ -1,10 +1,12 @@
 <template>
+  <!-- Desktop -->
   <header class="container mx-auto max-md:hidden">
     <div class="navbar bg-base-100">
       <div class="flex-1">
-        <a
-          class="transition-custom btn-ghost btn text-xl font-semibold normal-case text-black hover:scale-110 hover:bg-transparent hover:text-purple"
-          >Isaac F.</a
+        <RouterLink
+          to="/"
+          class="transition-custom logo btn-ghost btn text-xl font-semibold normal-case text-black hover:scale-110 hover:bg-transparent hover:text-purple"
+          >Isaac F.</RouterLink
         >
       </div>
       <div class="flex-none">
@@ -20,7 +22,8 @@
             <!-- <RouterLink to="/">curriculo</RouterLink> -->
             <a
               class="text-black hover:bg-transparent hover:text-purple"
-              href="#"
+              :href="projectsStore.resume"
+              target="_blank"
               >Currículo</a
             >
           </li>
@@ -77,7 +80,12 @@
             </li>
             <li class="hover:text-purple">
               <!-- <RouterLink to="/">curriculo</RouterLink> -->
-              <a class="text-black hover:bg-transparent" href="#">Currículo</a>
+              <a
+                class="text-black hover:bg-transparent"
+                :href="projectsStore.resume"
+                target="_blank"
+                >Currículo</a
+              >
             </li>
             <li class="hover:text-purple">
               <RouterLink class="text-black hover:bg-transparent" to="/projects"
@@ -93,7 +101,9 @@
         </div>
       </div>
       <div class="navbar-center">
-        <a class="btn-ghost btn text-xl normal-case">Isaac F.</a>
+        <RouterLink to="/" class="btn-ghost btn text-xl normal-case"
+          >Isaac F.</RouterLink
+        >
       </div>
       <div class="navbar-end">
         <label class="swap-rotate swap">
@@ -123,12 +133,29 @@
   </header>
 </template>
 
-<style scoped></style>
+<style scoped>
+a.router-link-active.logo {
+  color: black;
+}
+</style>
 
-<script setup>
+<script>
 // export default {
 //   name: "Header",
 // };
 
 import { RouterLink } from 'vue-router'
+
+import { mapStores } from 'pinia'
+import useProjectsStore from '@/stores/projects'
+
+export default {
+  // name: 'Header',
+  components: {
+    RouterLink,
+  },
+  computed: {
+    ...mapStores(useProjectsStore),
+  },
+}
 </script>
