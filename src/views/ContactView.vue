@@ -64,11 +64,7 @@
       </div>
     </div>
     <div class="right bob-on-hover ml-auto">
-      <img
-        src="../assets/placeholder-about.png"
-        class="ml-auto"
-        alt=""
-        srcset="" />
+      <img src="../assets/contact-photo.png" class="ml-auto" alt="" srcset="" />
     </div>
   </div>
   <div
