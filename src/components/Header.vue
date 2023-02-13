@@ -5,7 +5,7 @@
       <div class="flex-1">
         <RouterLink
           to="/"
-          class="transition-custom btn-ghost btn text-xl font-semibold normal-case text-black hover:scale-110 hover:bg-transparent hover:text-purple"
+          class="transition-custom logo btn-ghost btn text-xl font-semibold normal-case text-black hover:scale-110 hover:bg-transparent hover:text-purple"
           >Isaac F.</RouterLink
         >
       </div>
@@ -22,7 +22,8 @@
             <!-- <RouterLink to="/">curriculo</RouterLink> -->
             <a
               class="text-black hover:bg-transparent hover:text-purple"
-              href="#"
+              :href="projectsStore.resume"
+              target="_blank"
               >Currículo</a
             >
           </li>
@@ -79,7 +80,12 @@
             </li>
             <li class="hover:text-purple">
               <!-- <RouterLink to="/">curriculo</RouterLink> -->
-              <a class="text-black hover:bg-transparent" href="#">Currículo</a>
+              <a
+                class="text-black hover:bg-transparent"
+                :href="projectsStore.resume"
+                target="_blank"
+                >Currículo</a
+              >
             </li>
             <li class="hover:text-purple">
               <RouterLink class="text-black hover:bg-transparent" to="/projects"
@@ -128,15 +134,28 @@
 </template>
 
 <style scoped>
-a.router-link-active {
+a.router-link-active.logo {
   color: black;
 }
 </style>
 
-<script setup>
+<script>
 // export default {
 //   name: "Header",
 // };
 
 import { RouterLink } from 'vue-router'
+
+import { mapStores } from 'pinia'
+import useProjectsStore from '@/stores/projects'
+
+export default {
+  // name: 'Header',
+  components: {
+    RouterLink,
+  },
+  computed: {
+    ...mapStores(useProjectsStore),
+  },
+}
 </script>

@@ -1,6 +1,8 @@
 <template>
   <a
     v-if="!isRouter"
+    target="_blank"
+    :href="to"
     class="bob-on-hover btn rounded-3xl border-purple bg-purple px-4 text-base font-semibold capitalize text-purple outline-none max-md:text-sm"
     :class="{
       'px-6 text-white hover:border-purple hover:bg-white hover:text-purple':

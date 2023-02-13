@@ -16,7 +16,10 @@
             </h1>
           </div>
           <div class="btns flex items-center gap-x-24 max-md:gap-x-10">
-            <Button text="Currículo" type="btn-primary" />
+            <Button
+              text="Currículo"
+              type="btn-primary"
+              :to="projectsStore.resume" />
             <Button
               to="/projects"
               :isRouter="true"
