@@ -98,6 +98,11 @@
     </div>
   </div>
 
+  <!-- arown-down -->
+  <!-- <div class="">
+    <ArrowDown />
+  </div> -->
+
   <!-- projects -->
   <div class="container mx-auto mt-14 px-4">
     <!-- props -->
@@ -134,6 +139,7 @@ import Header from '@/components/Header.vue'
 import Button from '@/components/Button.vue'
 import ProjectCardHome from '@/components/ProjectCardHome.vue'
 import Footer from '@/components/Footer.vue'
+import ArrowDown from '../components/ArrowDown.vue'
 
 import { mapStores } from 'pinia'
 import useProjectsStore from '@/stores/projects'
@@ -144,6 +150,7 @@ export default {
   components: {
     Header,
     Button,
+    ArrowDown,
     ProjectCardHome,
     Footer,
     RouterLink,
