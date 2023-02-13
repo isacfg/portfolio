@@ -1,10 +1,12 @@
 <template>
+  <!-- Desktop -->
   <header class="container mx-auto max-md:hidden">
     <div class="navbar bg-base-100">
       <div class="flex-1">
-        <a
+        <RouterLink
+          to="/"
           class="transition-custom btn-ghost btn text-xl font-semibold normal-case text-black hover:scale-110 hover:bg-transparent hover:text-purple"
-          >Isaac F.</a
+          >Isaac F.</RouterLink
         >
       </div>
       <div class="flex-none">
@@ -93,7 +95,9 @@
         </div>
       </div>
       <div class="navbar-center">
-        <a class="btn-ghost btn text-xl normal-case">Isaac F.</a>
+        <RouterLink to="/" class="btn-ghost btn text-xl normal-case"
+          >Isaac F.</RouterLink
+        >
       </div>
       <div class="navbar-end">
         <label class="swap-rotate swap">
@@ -123,7 +127,11 @@
   </header>
 </template>
 
-<style scoped></style>
+<style scoped>
+a.router-link-active {
+  color: black;
+}
+</style>
 
 <script setup>
 // export default {

@@ -113,10 +113,10 @@
   </div>
 
   <div class="container mx-auto mt-16 mb-8 w-full text-center max-md:mt-6">
-    <a
-      href=""
+    <RouterLink
+      to="/projects"
       class="bob-on-hover border-b-2 border-purple text-base font-semibold text-black hover:text-purple"
-      >Ver mais</a
+      >Ver mais</RouterLink
     >
   </div>
 
@@ -132,6 +132,7 @@ import Footer from '@/components/Footer.vue'
 
 import { mapStores } from 'pinia'
 import useProjectsStore from '@/stores/projects'
+import { RouterLink } from 'vue-router'
 
 export default {
   name: 'Home',
@@ -140,10 +141,12 @@ export default {
     Button,
     ProjectCardHome,
     Footer,
+    RouterLink,
   },
   data() {
     return {}
   },
+
   computed: {
     ...mapStores(useProjectsStore),
   },
@@ -154,5 +157,9 @@ export default {
 <style>
 a.router-link-active {
   color: rgb(84 60 217);
+}
+
+html {
+  scroll-behavior: smooth;
 }
 </style>

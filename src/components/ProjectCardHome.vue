@@ -22,7 +22,6 @@
       }">
       <div class="project-name">
         <h2 class="text-2xl font-medium text-black">
-          <!-- {{ projectsStore.projects }} -->
           {{ projectName }}
         </h2>
         <p class="mt-4 text-base font-normal leading-7 text-gray">
