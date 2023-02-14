@@ -1,10 +1,10 @@
 <template>
   <!-- NAVBAR -->
-  <Header />
+  <!-- <Header /> -->
 
   <!-- hero -->
-  <div class="container mx-auto mt-14">
-    <div class="flex flex-row items-center px-4 max-md:flex-col">
+  <div class="container mx-auto mt-14 dark:bg-black">
+    <div class="flex flex-row items-center px-4 max-md:flex-col max-md:px-6">
       <div class="left flex flex-col gap-y-24">
         <div class="main flex flex-col gap-y-7">
           <div class="texts">
@@ -28,8 +28,8 @@
           </div>
         </div>
         <div class="texts-b">
-          <p class="text-xl font-normal max-md:text-left max-md:text-sm">
-            👩🏻‍💻 Trabalhando como frontend developer na
+          <p class="text-xl font-normal max-md:text-left max-md:text-base">
+            👩🏻‍💻 Trabalhando como desenvolvedor frontend na
             <a
               href="https://www.ejectufrn.com.br/"
               class="transition-custom bob-on-hover text-purple"
@@ -37,7 +37,8 @@
               >@EJECT</a
             >
           </p>
-          <p class="text-xl font-normal max-md:text-left max-md:text-sm">
+          <p
+            class="text-xl font-normal max-md:mt-2 max-md:text-left max-md:text-base">
             📚 Estudando Ciências e Tecnologia na
             <a
               class="transition-custom bob-on-hover text-purple"
@@ -48,7 +49,8 @@
           </p>
         </div>
       </div>
-      <div class="right ml-auto max-md:mx-auto max-md:my-auto">
+      <div
+        class="right ml-auto max-md:mt-10 max-md:ml-0 max-md:flex max-md:items-center max-md:justify-center">
         <img
           src="../assets/ilus.svg"
           class="bob-on-hover max-md:w-3/4"
@@ -96,6 +98,11 @@
     </div>
   </div>
 
+  <!-- arown-down -->
+  <!-- <div class="">
+    <ArrowDown />
+  </div> -->
+
   <!-- projects -->
   <div class="container mx-auto mt-14 px-4">
     <!-- props -->
@@ -124,7 +131,7 @@
   </div>
 
   <!-- FOOTER -->
-  <Footer />
+  <!-- <Footer /> -->
 </template>
 
 <script>
@@ -132,26 +139,33 @@ import Header from '@/components/Header.vue'
 import Button from '@/components/Button.vue'
 import ProjectCardHome from '@/components/ProjectCardHome.vue'
 import Footer from '@/components/Footer.vue'
+import ArrowDown from '../components/ArrowDown.vue'
 
 import { mapStores } from 'pinia'
 import useProjectsStore from '@/stores/projects'
 import { RouterLink } from 'vue-router'
 
+import { useDark } from '@vueuse/core'
+
 export default {
   name: 'Home',
   components: {
-    Header,
+    // Header,
     Button,
+    ArrowDown,
     ProjectCardHome,
-    Footer,
+    // Footer,
     RouterLink,
   },
   data() {
     return {}
   },
-
+  onMounted() {
+    console.log(this.isDark)
+  },
   computed: {
     ...mapStores(useProjectsStore),
+    isDark: useDark(),
   },
   methods: {},
 }

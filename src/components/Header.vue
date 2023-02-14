@@ -133,11 +133,7 @@
   </header>
 </template>
 
-<style scoped>
-a.router-link-active.logo {
-  color: black;
-}
-</style>
+<style scoped></style>
 
 <script>
 // export default {
