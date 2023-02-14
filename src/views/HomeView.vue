@@ -158,15 +158,14 @@ export default {
     RouterLink,
   },
   data() {
-    return {
-      isDark: useDark(),
-    }
+    return {}
   },
   onMounted() {
     console.log(this.isDark)
   },
   computed: {
     ...mapStores(useProjectsStore),
+    isDark: useDark(),
   },
   methods: {},
 }
