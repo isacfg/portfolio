@@ -3,7 +3,7 @@
   <!-- <Header /> -->
 
   <!-- hero -->
-  <div class="container mx-auto mt-14 dark:bg-black">
+  <div class="container mx-auto mt-14">
     <div class="flex flex-row items-center px-4 max-md:flex-col max-md:px-6">
       <div class="left flex flex-col gap-y-24">
         <div class="main flex flex-col gap-y-7">
