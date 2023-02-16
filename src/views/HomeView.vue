@@ -10,10 +10,12 @@
       <div class="left flex flex-col gap-y-24">
         <div class="main flex flex-col gap-y-7">
           <div class="texts">
-            <p class="text-2xl font-medium text-black max-md:text-xl">
+            <p
+              class="text-2xl font-medium text-black dark:text-blackDarkMode max-md:text-xl">
               oii! meu nome é
             </p>
-            <h1 class="text-8xl font-semibold text-purple max-md:text-7xl">
+            <h1
+              class="dark text-8xl font-semibold text-purple dark:text-purpleDarkMode max-md:text-7xl">
               Isaac F.
             </h1>
           </div>
@@ -30,20 +32,21 @@
           </div>
         </div>
         <div class="texts-b">
-          <p class="text-xl font-normal max-md:text-left max-md:text-base">
+          <p
+            class="text-xl font-normal text-black dark:text-blackDarkMode max-md:text-left max-md:text-base">
             👩🏻‍💻 Trabalhando como desenvolvedor frontend na
             <a
               href="https://www.ejectufrn.com.br/"
-              class="transition-custom bob-on-hover text-purple"
+              class="transition-custom bob-on-hover dark text-purple dark:text-purpleDarkMode"
               target="_blank"
               >@EJECT</a
             >
           </p>
           <p
-            class="text-xl font-normal max-md:mt-2 max-md:text-left max-md:text-base">
+            class="text-xl font-normal text-black dark:text-blackDarkMode max-md:mt-2 max-md:text-left max-md:text-base">
             📚 Estudando Ciências e Tecnologia na
             <a
-              class="transition-custom bob-on-hover text-purple"
+              class="transition-custom bob-on-hover dark text-purple dark:text-purpleDarkMode"
               target="_blank"
               href="https://www.ufrn.br/"
               >@UFRN</a
@@ -54,7 +57,8 @@
       <div
         class="right ml-auto max-md:mt-10 max-md:ml-0 max-md:flex max-md:items-center max-md:justify-center">
         <img
-          src="../assets/ilus.svg"
+          src="../assets/ilus-light.svg"
+          id="ilus"
           class="bob-on-hover max-md:w-3/4"
           alt=""
           srcset="" />
@@ -67,7 +71,7 @@
       <div class="socials-icons flex gap-x-6">
         <a
           target="_blank"
-          class="bob-on-hover hover:text-purple"
+          class="bob-on-hover dark hover:text-purple dark:text-purpleDarkMode"
           href="https://www.behance.net/isaacf">
           <img
             src="../assets/icons/behance-light.svg"
@@ -77,7 +81,7 @@
         </a>
         <a
           target="_blank"
-          class="bob-on-hover hover:text-purple"
+          class="bob-on-hover dark hover:text-purple dark:text-purpleDarkMode"
           href="https://github.com/isacfg">
           <img
             src="../assets/icons/github-light.svg"
@@ -87,7 +91,7 @@
         </a>
         <a
           target="_blank"
-          class="bob-on-hover hover:text-purple"
+          class="bob-on-hover dark hover:text-purple dark:text-purpleDarkMode"
           href="https://www.linkedin.com/in/isaacfig/">
           <img
             src="../assets/icons/linkedin-light.svg"
@@ -127,7 +131,7 @@
   <div class="container mx-auto mt-16 mb-8 w-full text-center max-md:mt-6">
     <RouterLink
       to="/projects"
-      class="bob-on-hover border-b-2 border-purple text-base font-semibold text-black hover:text-purple"
+      class="bob-on-hover dark border-b-2 border-purple text-base font-semibold text-black hover:text-purple dark:text-blackDarkMode dark:hover:text-purpleDarkMode"
       >Ver mais</RouterLink
     >
   </div>
@@ -161,7 +165,10 @@ export default {
 
 <style>
 a.router-link-active {
-  color: rgb(84 60 217);
+  color: rgb(84 60 217) !important;
+}
+.dark a.router-link-active {
+  color: #7f5af0 !important;
 }
 
 html {

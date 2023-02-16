@@ -1,11 +1,11 @@
 <template>
   <!-- Desktop -->
   <header class="container mx-auto max-md:hidden">
-    <div class="navbar bg-base-100">
+    <div class="navbar bg-base-100 dark:bg-whiteDarkMode">
       <div class="flex-1">
         <RouterLink
           to="/"
-          class="transition-custom logo btn-ghost btn text-xl font-semibold normal-case text-black hover:scale-110 hover:bg-transparent hover:text-purple"
+          class="transition-custom logo btn-ghost btn text-xl font-semibold normal-case text-black hover:scale-110 hover:bg-transparent hover:text-purple dark:text-blackDarkMode"
           >Isaac F.</RouterLink
         >
       </div>
@@ -13,7 +13,7 @@
         <ul class="menu menu-horizontal px-1 font-medium">
           <li class="hover:text-purple">
             <RouterLink
-              class="text-black hover:bg-transparent hover:text-purple"
+              class="transition-custom text-black hover:scale-110 hover:bg-transparent hover:text-purple dark:text-blackDarkMode"
               to="/"
               >Home</RouterLink
             >
@@ -21,7 +21,7 @@
           <li class="hover:text-purple">
             <!-- <RouterLink to="/">curriculo</RouterLink> -->
             <a
-              class="text-black hover:bg-transparent hover:text-purple"
+              class="transition-custom text-black hover:scale-110 hover:bg-transparent hover:text-purple dark:text-blackDarkMode"
               :href="projectsStore.resume"
               target="_blank"
               >Currículo</a
@@ -29,14 +29,14 @@
           </li>
           <li class="hover:text-purple">
             <RouterLink
-              class="text-black hover:bg-transparent hover:text-purple"
+              class="transition-custom text-black hover:scale-110 hover:bg-transparent hover:text-purple dark:text-blackDarkMode"
               to="/projects"
               >Projetos</RouterLink
             >
           </li>
           <li class="hover:text-purple">
             <RouterLink
-              class="text-black hover:bg-transparent hover:text-purple"
+              class="transition-custom text-black hover:scale-110 hover:bg-transparent hover:text-purple dark:text-blackDarkMode"
               to="/contact"
               >Contato</RouterLink
             >
@@ -54,7 +54,7 @@
 
               <!-- moon icon -->
               <svg
-                class="swap-off w-6 fill-current"
+                class="swap-off w-6 fill-current text-black dark:text-blackDarkMode"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24">
                 <path
@@ -63,7 +63,7 @@
 
               <!-- sun icon -->
               <svg
-                class="swap-on w-6 fill-current"
+                class="swap-on w-6 fill-current text-black dark:text-blackDarkMode"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24">
                 <path
@@ -99,26 +99,32 @@
             tabindex="0"
             class="dropdown-content menu rounded-box menu-compact mt-3 w-52 bg-base-100 p-2 shadow">
             <li class="hover:text-purple">
-              <RouterLink class="text-black hover:bg-transparent" to="/"
+              <RouterLink
+                class="text-black hover:bg-transparent dark:text-blackDarkMode"
+                to="/"
                 >Home</RouterLink
               >
             </li>
             <li class="hover:text-purple">
               <!-- <RouterLink to="/">curriculo</RouterLink> -->
               <a
-                class="text-black hover:bg-transparent"
+                class="text-black hover:bg-transparent dark:text-blackDarkMode"
                 :href="projectsStore.resume"
                 target="_blank"
                 >Currículo</a
               >
             </li>
             <li class="hover:text-purple">
-              <RouterLink class="text-black hover:bg-transparent" to="/projects"
+              <RouterLink
+                class="text-black hover:bg-transparent dark:text-blackDarkMode"
+                to="/projects"
                 >Projetos</RouterLink
               >
             </li>
             <li class="hover:text-purple">
-              <RouterLink class="text-black hover:bg-transparent" to="/contact"
+              <RouterLink
+                class="text-black hover:bg-transparent dark:text-blackDarkMode"
+                to="/contact"
                 >Contato</RouterLink
               >
             </li>
