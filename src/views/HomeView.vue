@@ -2,6 +2,8 @@
   <!-- NAVBAR -->
   <!-- <Header /> -->
 
+  <!-- <button @click="toggleDark()" class="btn">Toggle {{ isDark }}</button> -->
+
   <!-- hero -->
   <div class="container mx-auto mt-14">
     <div class="flex flex-row items-center px-4 max-md:flex-col max-md:px-6">
@@ -135,39 +137,25 @@
 </template>
 
 <script>
-import Header from '@/components/Header.vue'
 import Button from '@/components/Button.vue'
 import ProjectCardHome from '@/components/ProjectCardHome.vue'
-import Footer from '@/components/Footer.vue'
 import ArrowDown from '../components/ArrowDown.vue'
 
 import { mapStores } from 'pinia'
 import useProjectsStore from '@/stores/projects'
 import { RouterLink } from 'vue-router'
 
-import { useDark } from '@vueuse/core'
-
 export default {
   name: 'Home',
   components: {
-    // Header,
     Button,
     ArrowDown,
     ProjectCardHome,
-    // Footer,
     RouterLink,
-  },
-  data() {
-    return {}
-  },
-  onMounted() {
-    console.log(this.isDark)
   },
   computed: {
     ...mapStores(useProjectsStore),
-    isDark: useDark(),
   },
-  methods: {},
 }
 </script>
 
