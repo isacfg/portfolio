@@ -1,8 +1,7 @@
 <template>
   <!-- NAVBAR -->
   <!-- <Header /> -->
-
-  <!-- <button @click="toggleDark()" class="btn">Toggle {{ isDark }}</button> -->
+  <!-- <p>Dark: {{ isDarkHome }}</p> -->
 
   <!-- hero -->
   <div class="container mx-auto mt-14">
@@ -37,7 +36,7 @@
             👩🏻‍💻 Trabalhando como desenvolvedor frontend na
             <a
               href="https://www.ejectufrn.com.br/"
-              class="transition-custom bob-on-hover dark text-purple dark:text-purpleDarkMode"
+              class="transition-custom bob-on-hover dark text-purple dark:brightness-150"
               target="_blank"
               >@EJECT</a
             >
@@ -46,7 +45,7 @@
             class="text-xl font-normal text-black dark:text-blackDarkMode max-md:mt-2 max-md:text-left max-md:text-base">
             📚 Estudando Ciências e Tecnologia na
             <a
-              class="transition-custom bob-on-hover dark text-purple dark:text-purpleDarkMode"
+              class="transition-custom bob-on-hover dark text-purple dark:brightness-150"
               target="_blank"
               href="https://www.ufrn.br/"
               >@UFRN</a
@@ -76,6 +75,7 @@
           href="https://www.behance.net/isaacf">
           <img
             src="../assets/icons/behance-light.svg"
+            id="behance"
             class="max-md:w-6"
             alt=""
             srcset="" />
@@ -86,6 +86,7 @@
           href="https://github.com/isacfg">
           <img
             src="../assets/icons/github-light.svg"
+            id="github"
             class="max-md:w-6"
             alt=""
             srcset="" />
@@ -96,6 +97,7 @@
           href="https://www.linkedin.com/in/isaacfig/">
           <img
             src="../assets/icons/linkedin-light.svg"
+            id="linkedin"
             class="max-md:w-6"
             alt=""
             srcset="" />
@@ -133,7 +135,7 @@
   <div class="container mx-auto mt-16 mb-8 w-full text-center max-md:mt-6">
     <RouterLink
       to="/projects"
-      class="bob-on-hover dark border-b-2 border-purple text-base font-semibold text-black hover:text-purple dark:text-blackDarkMode dark:hover:text-purpleDarkMode"
+      class="bob-on-hover dark border-b-2 border-purple text-base font-semibold text-black hover:text-purple dark:text-blackDarkMode"
       >Ver mais</RouterLink
     >
   </div>
@@ -162,6 +164,50 @@ export default {
   computed: {
     ...mapStores(useProjectsStore),
   },
+  props: {
+    isDarkHome: {
+      type: Boolean,
+    },
+  },
+  updated() {
+    console.log('updated')
+    if (this.isDarkHome) {
+      document.getElementById('ilus').src = '/src/assets/ilus-dark.svg'
+      document.getElementById('behance').src =
+        '/src/assets/icons/behance-dark.svg'
+      document.getElementById('github').src =
+        '/src/assets/icons/github-dark.svg'
+      document.getElementById('linkedin').src =
+        '/src/assets/icons/linkedin-dark.svg'
+    } else {
+      document.getElementById('ilus').src = '/src/assets/ilus-light.svg'
+      document.getElementById('behance').src =
+        '/src/assets/icons/behance-light.svg'
+      document.getElementById('github').src =
+        '/src/assets/icons/github-light.svg'
+      document.getElementById('linkedin').src =
+        '/src/assets/icons/linkedin-light.svg'
+    }
+  },
+  mounted() {
+    if (this.isDarkHome) {
+      document.getElementById('ilus').src = '/src/assets/ilus-dark.svg'
+      document.getElementById('behance').src =
+        '/src/assets/icons/behance-dark.svg'
+      document.getElementById('github').src =
+        '/src/assets/icons/github-dark.svg'
+      document.getElementById('linkedin').src =
+        '/src/assets/icons/linkedin-dark.svg'
+    } else {
+      document.getElementById('ilus').src = '/src/assets/ilus-light.svg'
+      document.getElementById('behance').src =
+        '/src/assets/icons/behance-light.svg'
+      document.getElementById('github').src =
+        '/src/assets/icons/github-light.svg'
+      document.getElementById('linkedin').src =
+        '/src/assets/icons/linkedin-light.svg'
+    }
+  },
 }
 </script>
 
@@ -170,7 +216,7 @@ a.router-link-active {
   color: rgb(84 60 217) !important;
 }
 .dark a.router-link-active {
-  color: #7f5af0 !important;
+  color: #7c3aed !important;
 }
 
 html {

@@ -3,8 +3,9 @@
 
   <div
     class="container mx-auto mt-24 px-4 text-center max-md:mt-12 max-md:px-6">
-    <h2 class="text-5xl font-semibold text-black max-md:text-4xl">
-      Principais <span class="text-purple">Projetos</span>
+    <h2
+      class="text-5xl font-semibold text-black dark:text-blackDarkMode max-md:text-4xl">
+      Principais <span class="text-purple dark:brightness-150">Projetos</span>
     </h2>
   </div>
 

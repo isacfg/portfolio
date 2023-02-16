@@ -21,27 +21,29 @@
         'ml-auto': type === 'text-right',
       }">
       <div class="project-name">
-        <h2 class="text-2xl font-medium text-black max-md:text-xl">
+        <h2
+          class="text-2xl font-medium text-black dark:text-blackDarkMode max-md:text-xl">
           {{ projectName }}
         </h2>
         <p
-          class="mt-4 text-base font-normal leading-7 text-gray max-md:text-sm max-md:leading-7">
+          class="mt-4 text-base font-normal leading-7 text-gray dark:text-grayDarkMode max-md:text-sm max-md:leading-7">
           {{ projectDescription }}
         </p>
       </div>
       <div class="project-tech">
-        <p class="mt-6 text-lg font-medium text-purple max-md:text-base">
+        <p
+          class="mt-6 text-lg font-medium text-purple dark:brightness-150 max-md:text-base">
           Tecnologias
         </p>
         <p
-          class="mt-2 text-base font-normal leading-7 text-gray max-md:text-sm max-md:leading-7">
+          class="mt-2 text-base font-normal leading-7 text-gray dark:text-grayDarkMode max-md:text-sm max-md:leading-7">
           {{ projectTechs }}
         </p>
       </div>
       <div>
         <a
           :href="projectLink"
-          class="bob-on-hover mt-8 flex items-center gap-x-2 text-base font-semibold leading-6 text-purple max-md:text-sm"
+          class="bob-on-hover mt-8 flex items-center gap-x-2 text-base font-semibold leading-6 text-purple dark:brightness-150 max-md:text-sm"
           target="_blank"
           >Ver Projeto
           <span
