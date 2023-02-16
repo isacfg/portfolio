@@ -37,7 +37,7 @@
             👩🏻‍💻 Trabalhando como desenvolvedor frontend na
             <a
               href="https://www.ejectufrn.com.br/"
-              class="transition-custom bob-on-hover dark text-purple dark:text-purpleDarkMode"
+              class="transition-custom bob-on-hover dark text-purple dark:brightness-150"
               target="_blank"
               >@EJECT</a
             >
@@ -46,7 +46,7 @@
             class="text-xl font-normal text-black dark:text-blackDarkMode max-md:mt-2 max-md:text-left max-md:text-base">
             📚 Estudando Ciências e Tecnologia na
             <a
-              class="transition-custom bob-on-hover dark text-purple dark:text-purpleDarkMode"
+              class="transition-custom bob-on-hover dark text-purple dark:brightness-150"
               target="_blank"
               href="https://www.ufrn.br/"
               >@UFRN</a
@@ -170,7 +170,10 @@ a.router-link-active {
   color: rgb(84 60 217) !important;
 }
 .dark a.router-link-active {
-  color: #8b5cf6 !important;
+  color: #7c3aed !important;
+  /* brightness: 150 !important; */
+  /* dark:brightness-150 */
+  /* filter: brightness(2); */
 }
 
 html {

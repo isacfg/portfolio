@@ -78,10 +78,12 @@
 
   <!-- Mobile Nav -->
   <header class="container mx-auto md:hidden">
-    <div class="navbar bg-base-100">
+    <div class="navbar bg-base-100 dark:bg-transparent">
       <div class="navbar-start">
         <div class="dropdown">
-          <label tabindex="0" class="btn-ghost btn-circle btn">
+          <label
+            tabindex="0"
+            class="btn-ghost btn-circle btn dark:text-blackDarkMode">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               class="h-5 w-5"
@@ -97,7 +99,7 @@
           </label>
           <ul
             tabindex="0"
-            class="dropdown-content menu rounded-box menu-compact mt-3 w-52 bg-base-100 p-2 shadow">
+            class="dropdown-content menu rounded-box menu-compact mt-3 w-52 bg-base-100 p-2 shadow brightness-150 dark:bg-whiteDarkMode">
             <li class="hover:text-purple">
               <RouterLink
                 class="text-black hover:bg-transparent dark:text-blackDarkMode"
@@ -106,7 +108,6 @@
               >
             </li>
             <li class="hover:text-purple">
-              <!-- <RouterLink to="/">curriculo</RouterLink> -->
               <a
                 class="text-black hover:bg-transparent dark:text-blackDarkMode"
                 :href="projectsStore.resume"
@@ -132,13 +133,15 @@
         </div>
       </div>
       <div class="navbar-center">
-        <RouterLink to="/" class="btn-ghost btn text-xl normal-case"
+        <RouterLink
+          to="/"
+          class="btn-ghost btn text-xl normal-case dark:text-blackDarkMode"
           >Isaac F.</RouterLink
         >
       </div>
       <div class="navbar-end">
         <label
-          class="swap-rotate swap hover:scale-110 hover:bg-transparent hover:text-purple">
+          class="swap-rotate swap hover:scale-110 hover:bg-transparent hover:text-purple dark:text-blackDarkMode">
           <!-- this hidden checkbox controls the state -->
           <input
             type="checkbox"

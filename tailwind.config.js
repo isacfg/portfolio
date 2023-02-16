@@ -27,7 +27,7 @@ module.exports = {
         whiteDarkMode: '#060120',
         purpleDarkMode: '#7c3aed',
         blackDarkMode: '#f1f5f9',
-        grayDarkMode: '#A5A5A5',
+        grayDarkMode: '#94a3b8',
       },
     },
   },
