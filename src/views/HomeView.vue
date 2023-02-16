@@ -172,38 +172,40 @@ export default {
   updated() {
     console.log('updated')
     if (this.isDarkHome) {
-      document.getElementById('ilus').src = '/src/assets/ilus-dark.svg'
+      document.getElementById('ilus').src = './src/assets/ilus-dark.svg'
       document.getElementById('behance').src =
-        '/src/assets/icons/behance-dark.svg'
+        './src/assets/icons/behance-dark.svg'
       document.getElementById('github').src =
-        '/src/assets/icons/github-dark.svg'
+        './src/assets/icons/github-dark.svg'
       document.getElementById('linkedin').src =
-        '/src/assets/icons/linkedin-dark.svg'
+        './src/assets/icons/linkedin-dark.svg'
     } else {
-      document.getElementById('ilus').src = '/src/assets/ilus-light.svg'
+      document.getElementById('ilus').src = './src/assets/ilus-light.svg'
       document.getElementById('behance').src =
-        '/src/assets/icons/behance-light.svg'
+        './src/assets/icons/behance-light.svg'
       document.getElementById('github').src =
-        '/src/assets/icons/github-light.svg'
+        './src/assets/icons/github-light.svg'
       document.getElementById('linkedin').src =
-        '/src/assets/icons/linkedin-light.svg'
+        './src/assets/icons/linkedin-light.svg'
     }
   },
   mounted() {
     if (this.isDarkHome) {
-      document.getElementById('ilus').src = '../assets/ilus-dark.svg'
+      document.getElementById('ilus').src = './src/assets/ilus-dark.svg'
       document.getElementById('behance').src =
-        '../assets/icons/behance-dark.svg'
-      document.getElementById('github').src = '../assets/icons/github-dark.svg'
+        './src/assets/icons/behance-dark.svg'
+      document.getElementById('github').src =
+        './src/assets/icons/github-dark.svg'
       document.getElementById('linkedin').src =
-        '../assets/icons/linkedin-dark.svg'
+        './src/assets/icons/linkedin-dark.svg'
     } else {
-      document.getElementById('ilus').src = '../assets/ilus-light.svg'
+      document.getElementById('ilus').src = './src/assets/ilus-light.svg'
       document.getElementById('behance').src =
-        '../assets/icons/behance-light.svg'
-      document.getElementById('github').src = '../assets/icons/github-light.svg'
+        './src/assets/icons/behance-light.svg'
+      document.getElementById('github').src =
+        './src/assets/icons/github-light.svg'
       document.getElementById('linkedin').src =
-        '../assets/icons/linkedin-light.svg'
+        './src/assets/icons/linkedin-light.svg'
     }
   },
 }
