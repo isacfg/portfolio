@@ -67,7 +67,8 @@
     <!-- SOCIALS -->
     <div
       class="socials container mx-auto mt-16 flex w-full items-center gap-x-6 px-4">
-      <div class="line flex-1 border border-black"></div>
+      <div
+        class="line flex-1 border border-black dark:border-blackDarkMode"></div>
       <div class="socials-icons flex gap-x-6">
         <a
           target="_blank"
@@ -100,7 +101,8 @@
             srcset="" />
         </a>
       </div>
-      <div class="line flex-1 border border-black"></div>
+      <div
+        class="line flex-1 border border-black dark:border-blackDarkMode"></div>
     </div>
   </div>
 
