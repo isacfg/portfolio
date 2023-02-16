@@ -48,7 +48,7 @@
           >Ver Projeto
           <span
             ><img
-              src="../assets/icons/arrow-circle-right.svg"
+              src="/icons/arrow-circle-right.svg"
               class="max-md:w-4/5"
               alt=""
           /></span>
