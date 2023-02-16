@@ -63,6 +63,10 @@ export default {
   data() {
     return {}
   },
+  mounted() {
+    // scroll to top
+    window.scrollTo(0, 0)
+  },
   computed: {
     ...mapStores(useProjectsStore),
   },

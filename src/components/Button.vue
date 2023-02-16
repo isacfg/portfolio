@@ -3,11 +3,11 @@
     v-if="!isRouter"
     target="_blank"
     :href="to"
-    class="bob-on-hover btn rounded-3xl border-purple bg-purple px-4 text-base font-semibold capitalize text-purple outline-none max-md:text-sm"
+    class="bob-on-hover btn rounded-3xl border-purple px-4 text-base font-semibold capitalize text-purple outline-none max-md:text-sm"
     :class="{
-      'px-6 text-white hover:border-purple hover:bg-white hover:text-purple':
+      'border-2 bg-purple px-6 text-white hover:border-purple hover:bg-white hover:text-purple dark:text-blackDarkMode dark:hover:bg-transparent  ':
         type === 'btn-primary',
-      'border-2 bg-white text-purple hover:border-purple hover:bg-purple hover:text-white':
+      'border-2 bg-white text-purple hover:border-purple hover:bg-purple hover:text-white dark:bg-transparent dark:text-blackDarkMode ':
         type === 'btn-secondary',
     }">
     {{ text }}
@@ -15,11 +15,11 @@
   <RouterLink
     :to="to"
     v-if="isRouter"
-    class="bob-on-hover btn rounded-3xl border-purple bg-purple px-4 text-base font-semibold capitalize text-purple outline-none max-md:text-sm"
+    class="bob-on-hover btn rounded-3xl border-purple px-4 text-base font-semibold capitalize text-purple outline-none max-md:text-sm"
     :class="{
-      'px-6 text-white hover:border-purple hover:bg-white hover:text-purple':
+      'border-2 bg-purple px-6 text-white hover:border-purple hover:bg-white hover:text-purple dark:text-blackDarkMode dark:hover:bg-transparent  ':
         type === 'btn-primary',
-      'border-2 bg-white text-purple hover:border-purple hover:bg-purple hover:text-white':
+      'border-2 bg-white text-purple hover:border-purple hover:bg-purple hover:text-white dark:bg-transparent dark:text-blackDarkMode ':
         type === 'btn-secondary',
     }"
     >{{ text }}</RouterLink
