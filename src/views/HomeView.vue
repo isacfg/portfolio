@@ -133,7 +133,7 @@
   <div class="container mx-auto mt-16 mb-8 w-full text-center max-md:mt-6">
     <RouterLink
       to="/projects"
-      class="bob-on-hover dark border-b-2 border-purple text-base font-semibold text-black hover:text-purple dark:text-blackDarkMode dark:hover:text-purpleDarkMode"
+      class="bob-on-hover dark border-b-2 border-purple text-base font-semibold text-black hover:text-purple dark:text-blackDarkMode"
       >Ver mais</RouterLink
     >
   </div>
@@ -170,7 +170,7 @@ a.router-link-active {
   color: rgb(84 60 217) !important;
 }
 .dark a.router-link-active {
-  color: #7f5af0 !important;
+  color: #8b5cf6 !important;
 }
 
 html {
