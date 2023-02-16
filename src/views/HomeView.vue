@@ -191,21 +191,19 @@ export default {
   },
   mounted() {
     if (this.isDarkHome) {
-      document.getElementById('ilus').src = '/src/assets/ilus-dark.svg'
+      document.getElementById('ilus').src = '../assets/ilus-dark.svg'
       document.getElementById('behance').src =
-        '/src/assets/icons/behance-dark.svg'
-      document.getElementById('github').src =
-        '/src/assets/icons/github-dark.svg'
+        '../assets/icons/behance-dark.svg'
+      document.getElementById('github').src = '../assets/icons/github-dark.svg'
       document.getElementById('linkedin').src =
-        '/src/assets/icons/linkedin-dark.svg'
+        '../assets/icons/linkedin-dark.svg'
     } else {
-      document.getElementById('ilus').src = '/src/assets/ilus-light.svg'
+      document.getElementById('ilus').src = '../assets/ilus-light.svg'
       document.getElementById('behance').src =
-        '/src/assets/icons/behance-light.svg'
-      document.getElementById('github').src =
-        '/src/assets/icons/github-light.svg'
+        '../assets/icons/behance-light.svg'
+      document.getElementById('github').src = '../assets/icons/github-light.svg'
       document.getElementById('linkedin').src =
-        '/src/assets/icons/linkedin-light.svg'
+        '../assets/icons/linkedin-light.svg'
     }
   },
 }
