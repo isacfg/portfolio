@@ -1,12 +1,29 @@
-<script setup>
+<script>
 import { RouterView } from 'vue-router'
 import Header from './components/Header.vue'
 import Footer from './components/Footer.vue'
+
+import { useDark } from '@vueuse/core'
+
+export default {
+  name: 'App',
+  components: {
+    RouterView,
+    Header,
+    Footer,
+  },
+
+  methods: {
+    darkMethod() {
+      return useDark().value
+    },
+  },
+}
 </script>
 
 <template>
   <Header />
-  <RouterView />
+  <RouterView :isDarkHome="darkMethod()" />
   <Footer />
 </template>
 

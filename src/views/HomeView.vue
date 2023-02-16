@@ -1,8 +1,7 @@
 <template>
   <!-- NAVBAR -->
   <!-- <Header /> -->
-
-  <!-- <button @click="toggleDark()" class="btn">Toggle {{ isDark }}</button> -->
+  <!-- <p>Dark: {{ isDarkHome }}</p> -->
 
   <!-- hero -->
   <div class="container mx-auto mt-14">
@@ -76,6 +75,7 @@
           href="https://www.behance.net/isaacf">
           <img
             src="../assets/icons/behance-light.svg"
+            id="behance"
             class="max-md:w-6"
             alt=""
             srcset="" />
@@ -86,6 +86,7 @@
           href="https://github.com/isacfg">
           <img
             src="../assets/icons/github-light.svg"
+            id="github"
             class="max-md:w-6"
             alt=""
             srcset="" />
@@ -96,6 +97,7 @@
           href="https://www.linkedin.com/in/isaacfig/">
           <img
             src="../assets/icons/linkedin-light.svg"
+            id="linkedin"
             class="max-md:w-6"
             alt=""
             srcset="" />
@@ -162,6 +164,50 @@ export default {
   computed: {
     ...mapStores(useProjectsStore),
   },
+  props: {
+    isDarkHome: {
+      type: Boolean,
+    },
+  },
+  updated() {
+    console.log('updated')
+    if (this.isDarkHome) {
+      document.getElementById('ilus').src = '/src/assets/ilus-dark.svg'
+      document.getElementById('behance').src =
+        '/src/assets/icons/behance-dark.svg'
+      document.getElementById('github').src =
+        '/src/assets/icons/github-dark.svg'
+      document.getElementById('linkedin').src =
+        '/src/assets/icons/linkedin-dark.svg'
+    } else {
+      document.getElementById('ilus').src = '/src/assets/ilus-light.svg'
+      document.getElementById('behance').src =
+        '/src/assets/icons/behance-light.svg'
+      document.getElementById('github').src =
+        '/src/assets/icons/github-light.svg'
+      document.getElementById('linkedin').src =
+        '/src/assets/icons/linkedin-light.svg'
+    }
+  },
+  mounted() {
+    if (this.isDarkHome) {
+      document.getElementById('ilus').src = '/src/assets/ilus-dark.svg'
+      document.getElementById('behance').src =
+        '/src/assets/icons/behance-dark.svg'
+      document.getElementById('github').src =
+        '/src/assets/icons/github-dark.svg'
+      document.getElementById('linkedin').src =
+        '/src/assets/icons/linkedin-dark.svg'
+    } else {
+      document.getElementById('ilus').src = '/src/assets/ilus-light.svg'
+      document.getElementById('behance').src =
+        '/src/assets/icons/behance-light.svg'
+      document.getElementById('github').src =
+        '/src/assets/icons/github-light.svg'
+      document.getElementById('linkedin').src =
+        '/src/assets/icons/linkedin-light.svg'
+    }
+  },
 }
 </script>
 
@@ -171,9 +217,6 @@ a.router-link-active {
 }
 .dark a.router-link-active {
   color: #7c3aed !important;
-  /* brightness: 150 !important; */
-  /* dark:brightness-150 */
-  /* filter: brightness(2); */
 }
 
 html {

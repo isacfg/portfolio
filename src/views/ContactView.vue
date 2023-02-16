@@ -44,6 +44,7 @@
             href="https://www.behance.net/isaacf">
             <img
               src="../assets/icons/behance-light.svg"
+              id="behance"
               class="max-md:w-6"
               alt=""
               srcset="" />
@@ -54,6 +55,7 @@
             href="https://github.com/isacfg">
             <img
               src="../assets/icons/github-light.svg"
+              id="github"
               class="max-md:w-6"
               alt=""
               srcset="" />
@@ -64,6 +66,7 @@
             href="https://www.linkedin.com/in/isaacfig/">
             <img
               src="../assets/icons/linkedin-light.svg"
+              id="linkedin"
               class="max-md:w-6"
               alt=""
               srcset="" />
@@ -160,21 +163,54 @@
 <style></style>
 
 <script>
-// import Header from '../components/Header.vue'
-// import Footer from '../components/Footer.vue'
 import Button from '../components/Button.vue'
 
-// :to="projectsStore.resume"
 import { mapStores } from 'pinia'
 import useProjectsStore from '@/stores/projects'
 
 export default {
   components: {
-    // Header,
     Button,
-    // Footer,
   },
-
+  props: {
+    isDarkHome: {
+      type: Boolean,
+    },
+  },
+  updated() {
+    if (this.isDarkHome) {
+      document.getElementById('behance').src =
+        '/src/assets/icons/behance-dark.svg'
+      document.getElementById('github').src =
+        '/src/assets/icons/github-dark.svg'
+      document.getElementById('linkedin').src =
+        '/src/assets/icons/linkedin-dark.svg'
+    } else {
+      document.getElementById('behance').src =
+        '/src/assets/icons/behance-light.svg'
+      document.getElementById('github').src =
+        '/src/assets/icons/github-light.svg'
+      document.getElementById('linkedin').src =
+        '/src/assets/icons/linkedin-light.svg'
+    }
+  },
+  mounted() {
+    if (this.isDarkHome) {
+      document.getElementById('behance').src =
+        '/src/assets/icons/behance-dark.svg'
+      document.getElementById('github').src =
+        '/src/assets/icons/github-dark.svg'
+      document.getElementById('linkedin').src =
+        '/src/assets/icons/linkedin-dark.svg'
+    } else {
+      document.getElementById('behance').src =
+        '/src/assets/icons/behance-light.svg'
+      document.getElementById('github').src =
+        '/src/assets/icons/github-light.svg'
+      document.getElementById('linkedin').src =
+        '/src/assets/icons/linkedin-light.svg'
+    }
+  },
   computed: {
     ...mapStores(useProjectsStore),
   },

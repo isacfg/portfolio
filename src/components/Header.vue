@@ -175,10 +175,6 @@
 <style scoped></style>
 
 <script>
-// export default {
-//   name: "Header",
-// };
-
 import { RouterLink } from 'vue-router'
 
 import { mapStores } from 'pinia'
@@ -187,7 +183,7 @@ import useProjectsStore from '@/stores/projects'
 import { useDark } from '@vueuse/core'
 
 export default {
-  // name: 'Header',
+  name: 'Header',
   components: {
     RouterLink,
   },
@@ -196,19 +192,11 @@ export default {
   },
 
   data() {
-    return {
-      isDark: useDark(),
-    }
+    return {}
   },
   methods: {
     toggleDark() {
       useDark().value = !useDark().value
-
-      console.log(
-        `isDark: ${useDark().value}, isChecked: ${
-          document.querySelector('#checkboxDark').checked
-        }`
-      )
     },
   },
 }
