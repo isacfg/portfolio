@@ -56,7 +56,7 @@
       <div
         class="right ml-auto max-md:mt-10 max-md:ml-0 max-md:flex max-md:items-center max-md:justify-center">
         <img
-          src="../assets/ilus-light.svg"
+          :src="ilusPath"
           id="ilus"
           class="bob-on-hover max-md:w-3/4"
           alt=""
@@ -74,7 +74,7 @@
           class="bob-on-hover dark hover:text-purple dark:text-purpleDarkMode"
           href="https://www.behance.net/isaacf">
           <img
-            src="../assets/icons/behance-light.svg"
+            :src="behancePath"
             id="behance"
             class="max-md:w-6"
             alt=""
@@ -85,7 +85,7 @@
           class="bob-on-hover dark hover:text-purple dark:text-purpleDarkMode"
           href="https://github.com/isacfg">
           <img
-            src="../assets/icons/github-light.svg"
+            :src="githubPath"
             id="github"
             class="max-md:w-6"
             alt=""
@@ -96,7 +96,7 @@
           class="bob-on-hover dark hover:text-purple dark:text-purpleDarkMode"
           href="https://www.linkedin.com/in/isaacfig/">
           <img
-            src="../assets/icons/linkedin-light.svg"
+            :src="linkedinPath"
             id="linkedin"
             class="max-md:w-6"
             alt=""
@@ -169,43 +169,39 @@ export default {
       type: Boolean,
     },
   },
-  updated() {
-    console.log('updated')
-    if (this.isDarkHome) {
-      document.getElementById('ilus').src = './src/assets/ilus-dark.svg'
-      document.getElementById('behance').src =
-        './src/assets/icons/behance-dark.svg'
-      document.getElementById('github').src =
-        './src/assets/icons/github-dark.svg'
-      document.getElementById('linkedin').src =
-        './src/assets/icons/linkedin-dark.svg'
-    } else {
-      document.getElementById('ilus').src = './src/assets/ilus-light.svg'
-      document.getElementById('behance').src =
-        './src/assets/icons/behance-light.svg'
-      document.getElementById('github').src =
-        './src/assets/icons/github-light.svg'
-      document.getElementById('linkedin').src =
-        './src/assets/icons/linkedin-light.svg'
+  data() {
+    return {
+      ilusPath: '',
+      behancePath: '',
+      githubPath: '',
+      linkedinPath: '',
     }
   },
+  methods: {},
   mounted() {
     if (this.isDarkHome) {
-      document.getElementById('ilus').src = './src/assets/ilus-dark.svg'
-      document.getElementById('behance').src =
-        './src/assets/icons/behance-dark.svg'
-      document.getElementById('github').src =
-        './src/assets/icons/github-dark.svg'
-      document.getElementById('linkedin').src =
-        './src/assets/icons/linkedin-dark.svg'
+      this.ilusPath = '/ilus-dark.svg'
+      this.behancePath = '/icons/behance-dark.svg'
+      this.githubPath = '/icons/github-dark.svg'
+      this.linkedinPath = '/icons/linkedin-dark.svg'
     } else {
-      document.getElementById('ilus').src = './src/assets/ilus-light.svg'
-      document.getElementById('behance').src =
-        './src/assets/icons/behance-light.svg'
-      document.getElementById('github').src =
-        './src/assets/icons/github-light.svg'
-      document.getElementById('linkedin').src =
-        './src/assets/icons/linkedin-light.svg'
+      this.ilusPath = '/ilus-light.svg'
+      this.behancePath = '/icons/behance-light.svg'
+      this.githubPath = '/icons/github-light.svg'
+      this.linkedinPath = '/icons/linkedin-light.svg'
+    }
+  },
+  updated() {
+    if (this.isDarkHome) {
+      this.ilusPath = '/ilus-dark.svg'
+      this.behancePath = '/icons/behance-dark.svg'
+      this.githubPath = '/icons/github-dark.svg'
+      this.linkedinPath = '/icons/linkedin-dark.svg'
+    } else {
+      this.ilusPath = '/ilus-light.svg'
+      this.behancePath = '/icons/behance-light.svg'
+      this.githubPath = '/icons/github-light.svg'
+      this.linkedinPath = '/icons/linkedin-light.svg'
     }
   },
 }

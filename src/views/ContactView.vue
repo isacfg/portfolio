@@ -43,7 +43,7 @@
             class="bob-on-hover hover:text-purple"
             href="https://www.behance.net/isaacf">
             <img
-              src="../assets/icons/behance-light.svg"
+              :src="behancePath"
               id="behance"
               class="max-md:w-6"
               alt=""
@@ -54,7 +54,7 @@
             class="bob-on-hover hover:text-purple"
             href="https://github.com/isacfg">
             <img
-              src="../assets/icons/github-light.svg"
+              :src="githubPath"
               id="github"
               class="max-md:w-6"
               alt=""
@@ -65,7 +65,7 @@
             class="bob-on-hover hover:text-purple"
             href="https://www.linkedin.com/in/isaacfig/">
             <img
-              src="../assets/icons/linkedin-light.svg"
+              :src="linkedinPath"
               id="linkedin"
               class="max-md:w-6"
               alt=""
@@ -177,38 +177,33 @@ export default {
       type: Boolean,
     },
   },
-  updated() {
-    if (this.isDarkHome) {
-      document.getElementById('behance').src =
-        '/src/assets/icons/behance-dark.svg'
-      document.getElementById('github').src =
-        '/src/assets/icons/github-dark.svg'
-      document.getElementById('linkedin').src =
-        '/src/assets/icons/linkedin-dark.svg'
-    } else {
-      document.getElementById('behance').src =
-        '/src/assets/icons/behance-light.svg'
-      document.getElementById('github').src =
-        '/src/assets/icons/github-light.svg'
-      document.getElementById('linkedin').src =
-        '/src/assets/icons/linkedin-light.svg'
+  data() {
+    return {
+      behancePath: '',
+      githubPath: '',
+      linkedinPath: '',
     }
   },
   mounted() {
     if (this.isDarkHome) {
-      document.getElementById('behance').src =
-        '/src/assets/icons/behance-dark.svg'
-      document.getElementById('github').src =
-        '/src/assets/icons/github-dark.svg'
-      document.getElementById('linkedin').src =
-        '/src/assets/icons/linkedin-dark.svg'
+      this.behancePath = '/icons/behance-dark.svg'
+      this.githubPath = '/icons/github-dark.svg'
+      this.linkedinPath = '/icons/linkedin-dark.svg'
     } else {
-      document.getElementById('behance').src =
-        '/src/assets/icons/behance-light.svg'
-      document.getElementById('github').src =
-        '/src/assets/icons/github-light.svg'
-      document.getElementById('linkedin').src =
-        '/src/assets/icons/linkedin-light.svg'
+      this.behancePath = '/icons/behance-light.svg'
+      this.githubPath = '/icons/github-light.svg'
+      this.linkedinPath = '/icons/linkedin-light.svg'
+    }
+  },
+  updated() {
+    if (this.isDarkHome) {
+      this.behancePath = '/icons/behance-dark.svg'
+      this.githubPath = '/icons/github-dark.svg'
+      this.linkedinPath = '/icons/linkedin-dark.svg'
+    } else {
+      this.behancePath = '/icons/behance-light.svg'
+      this.githubPath = '/icons/github-light.svg'
+      this.linkedinPath = '/icons/linkedin-light.svg'
     }
   },
   computed: {
