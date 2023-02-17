@@ -12,7 +12,10 @@
       </p>
       <div v-if="hasImage" class="">
         <div class="image mt-8 max-md:mt-4">
-          <img class="w-full" src="/placeholder-project-2.png" alt="" />
+          <img
+            class="bob-on-hover w-full"
+            src="/placeholder-project-2.png"
+            alt="" />
           <p class="mt-2 pl-8 text-sm text-gray max-md:pl-2">
             {{ legenda }}
           </p>
