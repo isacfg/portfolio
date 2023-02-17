@@ -1,13 +1,13 @@
 <template>
   <div class="container mx-auto mt-24 flex px-4 max-md:mt-12 max-md:px-6">
-    <aside class="flex w-2/12 flex-col">
+    <aside class="fixed flex w-2/12 flex-col">
       <a>Introdução</a>
       <a>Desafios</a>
       <a>Processo</a>
       <a>Resultado</a>
     </aside>
 
-    <div class="mx-auto w-10/12">
+    <div class="mx-auto w-10/12 pl-12">
       <article>
         <div class="head mx-auto flex flex-col items-center">
           <h2
@@ -21,8 +21,10 @@
             alt="" />
         </div>
         <div class="body mx-auto">
-          <ProjectTextBlock />
-          <ProjectTextBlock />
+          <ProjectTextBlock title="Introdução" />
+          <ProjectTextBlock title="Desafios" />
+          <ProjectTextBlock title="Processo" :hasImage="true" />
+          <ProjectTextBlock title="Resultado" :isLast="true" />
         </div>
       </article>
     </div>
@@ -47,7 +49,7 @@ export default {
   },
   mounted() {
     // scroll to top
-    window.scrollTo(0, 0)
+    // window.scrollTo(0, 0)
   },
 }
 </script>
