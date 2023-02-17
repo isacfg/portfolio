@@ -127,8 +127,8 @@
         :projectName="project.name"
         :projectDescription="project.description"
         :projectTechs="project.tech"
-        :projectLink="project.link"
-        :projectPhoto="project.photo" />
+        :projectPhoto="project.photo"
+        :projectId="project.id" />
     </div>
   </div>
 

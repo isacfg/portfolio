@@ -41,10 +41,9 @@
         </p>
       </div>
       <div>
-        <a
-          :href="projectLink"
+        <RouterLink
+          :to="`/projects/${projectId}`"
           class="bob-on-hover mt-8 flex items-center gap-x-2 text-base font-semibold leading-6 text-purple dark:brightness-150 max-md:text-sm"
-          target="_blank"
           >Ver Projeto
           <span
             ><img
@@ -52,7 +51,7 @@
               class="max-md:w-4/5"
               alt=""
           /></span>
-        </a>
+        </RouterLink>
       </div>
     </div>
   </div>
@@ -62,8 +61,13 @@
 // import { mapStores } from 'pinia'
 // import useProjectsStore from '@/stores/projects'
 
+import { RouterLink } from 'vue-router'
+
 export default {
   name: 'ProjectCardHome',
+  components: {
+    RouterLink,
+  },
   props: {
     type: {
       type: String,
@@ -87,7 +91,7 @@ export default {
       default:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purus amet eget enim semper porttitor viverra.',
     },
-    projectLink: {
+    projectId: {
       type: String,
       default: 'https://github.com/isacfg',
     },

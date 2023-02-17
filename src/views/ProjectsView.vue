@@ -17,8 +17,8 @@
         :projectName="project.name"
         :projectDescription="project.description"
         :projectTechs="project.tech"
-        :projectLink="project.link"
-        :projectPhoto="project.photo" />
+        :projectPhoto="project.photo"
+        :projectId="project.id" />
     </div>
   </div>
 
@@ -28,36 +28,15 @@
 <style></style>
 
 <script>
-// import Header from '../components/Header.vue'
-// import Footer from '../components/Footer.vue'
 import Button from '@/components/Button.vue'
 import ProjectCardHome from '@/components/ProjectCardHome.vue'
 
 import { mapStores } from 'pinia'
 import useProjectsStore from '@/stores/projects'
 
-// export default {
-//   name: 'Projects',
-//   components: {
-//     Header,
-//     Button,
-//     ProjectCardHome,
-//     Footer,
-//   },
-//   data() {
-//     return {}
-//   },
-//   computed: {
-//     ...mapStores(useProjectsStore),
-//   },
-//   methods: {},
-// }
-
 export default {
   name: 'Projects',
   components: {
-    // Header,
-    // Footer,
     Button,
     ProjectCardHome,
   },
