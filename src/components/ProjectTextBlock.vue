@@ -7,7 +7,7 @@
         {{ title }}
       </h2>
       <p
-        class="text-base font-normal leading-7 max-md:text-sm max-md:leading-7">
+        class="text-base font-normal leading-7 dark:text-grayDarkMode max-md:text-sm max-md:leading-7">
         {{ text }}
       </p>
       <div v-if="hasImage" class="">
@@ -16,12 +16,13 @@
             class="bob-on-hover w-full"
             src="/placeholder-project-2.png"
             alt="" />
-          <p class="mt-2 pl-8 text-sm text-gray max-md:pl-2">
+          <p
+            class="mt-2 pl-8 text-sm text-gray dark:text-grayDarkMode max-md:pl-2">
             {{ legenda }}
           </p>
         </div>
         <p
-          class="mt-12 text-base font-normal leading-7 max-md:text-sm max-md:leading-7">
+          class="mt-12 text-base font-normal leading-7 dark:text-grayDarkMode max-md:text-sm max-md:leading-7">
           {{ text2 }}
         </p>
       </div>
@@ -34,7 +35,7 @@
           <div class="text py-12 px-11 max-md:py-8 max-md:px-8">
             <p class="font-semibold uppercase text-purple">TAKEAWAY</p>
             <p
-              class="mt-4 text-base font-normal leading-7 text-black max-md:mt-2 max-md:text-sm max-md:leading-7">
+              class="mt-4 text-base font-normal leading-7 text-black dark:text-grayDarkMode max-md:mt-2 max-md:text-sm max-md:leading-7">
               {{ takeawayText }}
             </p>
           </div>

@@ -24,10 +24,26 @@
   <div class="container mx-auto mt-24 flex px-4 max-md:mt-12 max-md:px-6">
     <aside
       class="fixed flex w-2/12 flex-col gap-y-2 max-md:hidden max-md:w-auto">
-      <a class="text-black hover:text-purple" href="#introducao">Introdução</a>
-      <a class="text-black hover:text-purple" href="#desafios">Desafios</a>
-      <a class="text-black hover:text-purple" href="#processo">Processo</a>
-      <a class="text-black hover:text-purple" href="#resultado">Resultado</a>
+      <a
+        class="text-black hover:text-purple dark:text-blackDarkMode"
+        href="#introducao"
+        >Introdução</a
+      >
+      <a
+        class="text-black hover:text-purple dark:text-blackDarkMode"
+        href="#desafios"
+        >Desafios</a
+      >
+      <a
+        class="text-black hover:text-purple dark:text-blackDarkMode"
+        href="#processo"
+        >Processo</a
+      >
+      <a
+        class="text-black hover:text-purple dark:text-blackDarkMode"
+        href="#resultado"
+        >Resultado</a
+      >
     </aside>
 
     <div class="mx-auto w-10/12 pl-12 max-md:w-full max-md:pl-0">
@@ -37,7 +53,8 @@
             class="text-5xl font-semibold text-black dark:text-blackDarkMode max-md:text-4xl">
             {{ projectsStore.projects[$route.params.id - 1].name }}
           </h2>
-          <p class="mt-4 w-2/3 text-center max-md:text-sm">
+          <p
+            class="mt-4 w-2/3 text-center dark:text-grayDarkMode max-md:text-sm">
             {{ projectsStore.projects[$route.params.id - 1].tech }}
           </p>
           <img

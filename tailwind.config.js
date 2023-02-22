@@ -19,16 +19,20 @@ module.exports = {
     },
     extend: {
       colors: {
+        // light mode
         white: '#FFF',
         purple: '#543CD9',
         black: '#0A0430',
         gray: '#7F7F7F',
         lightgray: '#D9D9D9',
+
+        // dark mode
         whiteDarkMode: '#060120',
         purpleDarkMode: '#7c3aed',
         blackDarkMode: '#f1f5f9',
         grayDarkMode: '#94a3b8',
 
+        // takeaway project page
         lightPurple: '#543cd933',
         middlePurple: '#543cd980',
       },
