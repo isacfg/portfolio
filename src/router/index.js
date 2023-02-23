@@ -54,6 +54,14 @@ const router = createRouter({
       meta: {
         title: 'Entrar',
       },
+    },
+    {
+      path: '/:pathMatch(.*)*',
+      name: 'not-found',
+      component: () => import('../views/NotFoundView.vue'),
+      meta: {
+        title: 'Página não encontrada',
+      },
     }
   ]
 })
