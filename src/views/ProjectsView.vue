@@ -18,7 +18,7 @@
         :projectDescription="project.description"
         :projectTechs="project.tech"
         :projectPhoto="project.photo"
-        :projectId="project.id" />
+        :projectId="project.projectNumber" />
     </div>
   </div>
 

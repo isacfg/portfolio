@@ -96,16 +96,13 @@ export default {
       default: 'https://github.com/isacfg',
     },
     isFirst: {
-      type: String,
       default: 'false',
     },
   },
   data() {
     return {}
   },
-  // computed: {
-  //   ...mapStores(useProjectsStore),
-  // },
+
   methods: {},
 }
 </script>
