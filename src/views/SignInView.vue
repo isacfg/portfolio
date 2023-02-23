@@ -18,7 +18,7 @@
         <input
           class="input-bordered input mt-4"
           type="password"
-          placeholder="Password"
+          placeholder="Senha"
           v-model="password" />
         <p v-if="errMsg">{{ errMsg }}</p>
         <button
@@ -60,7 +60,7 @@ export default {
       const auth = getAuth()
       signInWithEmailAndPassword(auth, this.email, this.password)
         .then(() => {
-          console.log('Successfully logged in!')
+          console.log('Usuário logado com sucesso!	')
           this.$router.push('/dashboard')
         })
         .catch((error) => {

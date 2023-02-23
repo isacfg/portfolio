@@ -1,26 +1,4 @@
 <template>
-  <!-- Availabe data -->
-  <!--  projectsStore.projects[$route.params.id - 1] -->
-  <!--  projectsStore.projects[$route.params.id - 1].id -->
-  <!--  projectsStore.projects[$route.params.id - 1].name -->
-  <!--  projectsStore.projects[$route.params.id - 1].description -->
-  <!--  projectsStore.projects[$route.params.id - 1].tech -->
-  <!--  projectsStore.projects[$route.params.id - 1].image -->
-  <!--  projectsStore.projects[$route.params.id - 1].linkDemo -->
-  <!--  projectsStore.projects[$route.params.id - 1].linkGithub -->
-  <!--  projectsStore.projects[$route.params.id - 1].linkBehance -->
-  <!--  projectsStore.projects[$route.params.id - 1].introd -->
-  <!--  projectsStore.projects[$route.params.id - 1].challenge -->
-  <!--  projectsStore.projects[$route.params.id - 1].process1 -->
-  <!--  projectsStore.projects[$route.params.id - 1].processImage -->
-  <!--  projectsStore.projects[$route.params.id - 1].process2 -->
-  <!--  projectsStore.projects[$route.params.id - 1].processLegenda -->
-  <!--  projectsStore.projects[$route.params.id - 1].result -->
-  <!--  projectsStore.projects[$route.params.id - 1].takeaway -->
-  <!--  projectsStore.projects[$route.params.id - 1].gallery1 -->
-  <!--  projectsStore.projects[$route.params.id - 1].gallery2 -->
-  <!--  projectsStore.projects[$route.params.id - 1].gallery3 -->
-
   <div class="container mx-auto mt-24 flex px-4 max-md:mt-12 max-md:px-6">
     <aside
       class="fixed flex w-2/12 flex-col gap-y-2 max-md:hidden max-md:w-auto">
@@ -46,7 +24,9 @@
       >
     </aside>
 
-    <div class="mx-auto w-10/12 pl-12 max-md:w-full max-md:pl-0">
+    <div
+      v-if="projectsStore.projects[$route.params.id - 1]"
+      class="mx-auto w-10/12 pl-12 max-md:w-full max-md:pl-0">
       <article>
         <div class="head mx-auto flex flex-col items-center">
           <h2
@@ -94,21 +74,48 @@
         </div>
       </article>
     </div>
+    <!-- Se projeto não for encontrado -->
+    <div v-else class="body mx-auto w-10/12 pl-12 max-md:w-full max-md:pl-0">
+      <NotFound />
+    </div>
   </div>
+
+  <!-- Availabe data -->
+  <!--  projectsStore.projects[$route.params.id - 1] -->
+  <!--  projectsStore.projects[$route.params.id - 1].id -->
+  <!--  projectsStore.projects[$route.params.id - 1].name -->
+  <!--  projectsStore.projects[$route.params.id - 1].description -->
+  <!--  projectsStore.projects[$route.params.id - 1].tech -->
+  <!--  projectsStore.projects[$route.params.id - 1].image -->
+  <!--  projectsStore.projects[$route.params.id - 1].linkDemo -->
+  <!--  projectsStore.projects[$route.params.id - 1].linkGithub -->
+  <!--  projectsStore.projects[$route.params.id - 1].linkBehance -->
+  <!--  projectsStore.projects[$route.params.id - 1].introd -->
+  <!--  projectsStore.projects[$route.params.id - 1].challenge -->
+  <!--  projectsStore.projects[$route.params.id - 1].process1 -->
+  <!--  projectsStore.projects[$route.params.id - 1].processImage -->
+  <!--  projectsStore.projects[$route.params.id - 1].process2 -->
+  <!--  projectsStore.projects[$route.params.id - 1].processLegenda -->
+  <!--  projectsStore.projects[$route.params.id - 1].result -->
+  <!--  projectsStore.projects[$route.params.id - 1].takeaway -->
+  <!--  projectsStore.projects[$route.params.id - 1].gallery1 -->
+  <!--  projectsStore.projects[$route.params.id - 1].gallery2 -->
+  <!--  projectsStore.projects[$route.params.id - 1].gallery3 -->
 </template>
 
 <script>
 import ProjectTextBlock from '../components/ProjectTextBlock.vue'
+import NotFound from '../components/NotFound.vue'
 
 import { mapStores } from 'pinia'
 import useProjectsStore from '@/stores/projects'
 import projects from '../stores/projects'
-// projectsStore.projects[projectId - 1]
 
 export default {
   name: 'Project',
   components: {
     ProjectTextBlock,
+    NotFound,
   },
   computed: {
     ...mapStores(useProjectsStore),
@@ -120,4 +127,8 @@ export default {
 }
 </script>
 
-<style scoped></style>
+<style scoped>
+.body {
+  height: 60vh;
+}
+</style>
