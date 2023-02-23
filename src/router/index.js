@@ -38,6 +38,14 @@ const router = createRouter({
       meta: {
         title: 'Projeto'
       }
+    },
+    {
+      path: '/playground',
+      name: 'playground',
+      component: () => import('../views/PlaygroundView.vue'),
+      meta: {
+        title: 'Playground'
+      },
     }
   ]
 })

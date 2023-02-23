@@ -134,4 +134,9 @@ export default defineStore('projects', {
 
     ],
   }),
+  actions: {
+    setProjects(projects) {
+      this.projects = projects
+    },
+  }
 })
