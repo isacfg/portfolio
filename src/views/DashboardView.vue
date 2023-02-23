@@ -29,6 +29,7 @@ export default {
     Button,
   },
   mounted() {
+    window.scrollTo(0, 0)
     const auth = getAuth()
     onAuthStateChanged(auth, (user) => {
       if (user) {
