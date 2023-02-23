@@ -41,6 +41,13 @@
               >Contato</RouterLink
             >
           </li>
+          <li v-if="isLoggedIn" class="hover:text-purple">
+            <button
+              @click="signOut"
+              class="transition-custom text-black hover:scale-110 hover:bg-transparent hover:text-purple dark:text-blackDarkMode">
+              Logout
+            </button>
+          </li>
 
           <li>
             <label
@@ -129,6 +136,13 @@
                 >Contato</RouterLink
               >
             </li>
+            <li v-if="isLoggedIn" class="hover:text-purple">
+              <button
+                @click="signOut"
+                class="transition-custom text-black hover:scale-110 hover:bg-transparent hover:text-purple dark:text-blackDarkMode">
+                Logout
+              </button>
+            </li>
           </ul>
         </div>
       </div>
@@ -182,6 +196,8 @@ import useProjectsStore from '@/stores/projects'
 
 import { useDark } from '@vueuse/core'
 
+import { getAuth, onAuthStateChanged } from '@firebase/auth'
+
 export default {
   name: 'Header',
   components: {
@@ -190,13 +206,30 @@ export default {
   computed: {
     ...mapStores(useProjectsStore),
   },
-
   data() {
-    return {}
+    return {
+      isLoggedIn: false,
+    }
+  },
+  mounted() {
+    const auth = getAuth()
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        this.isLoggedIn = true
+      } else {
+        this.isLoggedIn = false
+      }
+    })
   },
   methods: {
     toggleDark() {
       useDark().value = !useDark().value
+    },
+    signOut() {
+      const auth = getAuth()
+      auth.signOut().then(() => {
+        this.$router.push('/')
+      })
     },
   },
 }

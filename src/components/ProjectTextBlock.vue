@@ -33,7 +33,9 @@
         <div
           class="takeaway mt-12 rounded-3xl border-2 border-middlePurple bg-lightPurple">
           <div class="text py-12 px-11 max-md:py-8 max-md:px-8">
-            <p class="font-semibold uppercase text-purple">TAKEAWAY</p>
+            <p class="font-semibold uppercase text-purple dark:brightness-150">
+              TAKEAWAY
+            </p>
             <p
               class="mt-4 text-base font-normal leading-7 text-black dark:text-grayDarkMode max-md:mt-2 max-md:text-sm max-md:leading-7">
               {{ takeawayText }}

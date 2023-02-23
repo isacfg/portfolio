@@ -38,6 +38,22 @@ const router = createRouter({
       meta: {
         title: 'Projeto'
       }
+    },
+    {
+      path: '/dashboard',
+      name: 'dashboard',
+      component: () => import('../views/DashboardView.vue'),
+      meta: {
+        title: 'Dashboard',
+      },
+    },
+    {
+      path: '/signin',
+      name: 'signin',
+      component: () => import('../views/SignInView.vue'),
+      meta: {
+        title: 'Entrar',
+      },
     }
   ]
 })

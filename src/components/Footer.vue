@@ -6,7 +6,8 @@
         made with ❤️ by Isaac F.
       </p>
     </div>
-    <div class="right flex gap-x-4 max-md:mt-3">
+    <div
+      class="right flex flex-wrap items-center justify-center gap-x-4 max-md:mt-3">
       <a
         :href="projectsStore.resume"
         target="_blank"
@@ -31,6 +32,11 @@
         class="bob-on-hover text-center text-black hover:text-purple dark:text-blackDarkMode max-md:text-sm">
         📖 Linkedin
       </a>
+      <RouterLink
+        to="/dashboard"
+        class="bob-on-hover text-center text-black hover:text-purple dark:text-blackDarkMode max-md:text-sm">
+        📊 Dashboard
+      </RouterLink>
     </div>
   </div>
 </template>
@@ -40,10 +46,13 @@
 <script>
 import { mapStores } from 'pinia'
 import useProjectsStore from '@/stores/projects'
+import { RouterLink } from 'vue-router'
 
 export default {
   name: 'Footer',
-
+  components: {
+    RouterLink,
+  },
   computed: {
     ...mapStores(useProjectsStore),
   },
