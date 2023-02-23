@@ -136,6 +136,13 @@
                 >Contato</RouterLink
               >
             </li>
+            <li v-if="isLoggedIn" class="hover:text-purple">
+              <button
+                @click="signOut"
+                class="transition-custom text-black hover:scale-110 hover:bg-transparent hover:text-purple dark:text-blackDarkMode">
+                Logout
+              </button>
+            </li>
           </ul>
         </div>
       </div>
