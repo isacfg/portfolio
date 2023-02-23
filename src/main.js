@@ -42,7 +42,7 @@ getDocs(colRef).then((snapshot) => {
   useProjectsStore().setProjects(projects);
   // console.log(projects)
 }).catch((err) => {
-  console.log('Error getting documents', err);
+  console.log('Erro ao ler docs firebase in main.js', err);
 });
 
 const app = createApp(App)

@@ -1,5 +1,5 @@
 <template>
-  <div>playground</div>
+  <div>dashboard</div>
 </template>
 
 <script>

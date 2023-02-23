@@ -40,11 +40,11 @@ const router = createRouter({
       }
     },
     {
-      path: '/playground',
-      name: 'playground',
-      component: () => import('../views/PlaygroundView.vue'),
+      path: '/dashboard',
+      name: 'dashboard',
+      component: () => import('../views/DashboardView.vue'),
       meta: {
-        title: 'Playground'
+        title: 'Dashboard'
       },
     }
   ]
