@@ -44,7 +44,15 @@ const router = createRouter({
       name: 'dashboard',
       component: () => import('../views/DashboardView.vue'),
       meta: {
-        title: 'Dashboard'
+        title: 'Dashboard',
+      },
+    },
+    {
+      path: '/signin',
+      name: 'signin',
+      component: () => import('../views/SignInView.vue'),
+      meta: {
+        title: 'Entrar',
       },
     }
   ]
