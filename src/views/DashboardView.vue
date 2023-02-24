@@ -1,5 +1,52 @@
 <template>
-  <div v-if="isLoggedIn">dashboard</div>
+  <div
+    class="body container mx-auto mt-14 flex flex-col items-center px-4"
+    v-if="isLoggedIn">
+    <!-- table -->
+    <div class="mb-8 w-full overflow-x-auto">
+      <table class="table w-full">
+        <!-- head -->
+        <thead>
+          <tr>
+            <th></th>
+            <th class="text-black">Nome</th>
+            <th>Tech Stack</th>
+            <th>Link</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- row 1 -->
+          <!-- <DashboardRow
+            name="Project Athena"
+            techStack="Vuejs, daisyUI, tailwind" /> -->
+          <DashboardRow
+            v-for="(project, index) in projectsStore.projects"
+            :key="project.id"
+            :name="project.name"
+            :techStack="project.tech"
+            :linkGithub="project.linkGithub"
+            :id="project.id"
+            :projectNumber="project.projectNumber" />
+        </tbody>
+        <!-- foot -->
+        <tfoot>
+          <tr>
+            <th></th>
+            <th>Nome</th>
+            <th>Tech Stack</th>
+            <th>Link</th>
+            <th></th>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+    <Button
+      to="/dashboard/add"
+      :isRouter="true"
+      text="Adicionar projeto"
+      type="btn-primary" />
+  </div>
 
   <!-- Se o usuário não estiver logado -->
   <div v-else class="flex h-screen flex-col items-center justify-center">
@@ -20,13 +67,18 @@
 import { getAuth, onAuthStateChanged } from '@firebase/auth'
 import { useRouter } from 'vue-router'
 import { RouterLink } from 'vue-router'
-import Button from '../components/Button.vue'
+import Button from '@/components/Button.vue'
+import DashboardRow from '@/components/DashboardRow.vue'
+
+import { mapStores } from 'pinia'
+import useProjectsStore from '@/stores/projects'
 
 export default {
   name: 'DashboardView',
   components: {
     RouterLink,
     Button,
+    DashboardRow,
   },
   mounted() {
     window.scrollTo(0, 0)
@@ -38,7 +90,10 @@ export default {
       } else {
         alert('Você precisa estar logado para acessar essa página')
         this.isLoggedIn = false
-        this.$router.push('/signin')
+        // this.$router.push('/signin')
+        setTimeout(() => {
+          this.$router.push('/signin')
+        }, 1000)
       }
     })
   },
@@ -47,7 +102,14 @@ export default {
       isLoggedIn: false,
     }
   },
+  computed: {
+    ...mapStores(useProjectsStore),
+  },
 }
 </script>
 
-<style scoped></style>
+<style scoped>
+.body {
+  min-height: 60vh;
+}
+</style>

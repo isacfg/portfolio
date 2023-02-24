@@ -40,6 +40,14 @@ const router = createRouter({
       }
     },
     {
+      path: '/signin',
+      name: 'signin',
+      component: () => import('../views/SignInView.vue'),
+      meta: {
+        title: 'Entrar',
+      },
+    },
+    {
       path: '/dashboard',
       name: 'dashboard',
       component: () => import('../views/DashboardView.vue'),
@@ -48,11 +56,11 @@ const router = createRouter({
       },
     },
     {
-      path: '/signin',
-      name: 'signin',
-      component: () => import('../views/SignInView.vue'),
+      path: '/dashboard/add',
+      name: 'add-project',
+      component: () => import('../views/AddProjectView.vue'),
       meta: {
-        title: 'Entrar',
+        title: 'Adicionar projeto',
       },
     },
     {

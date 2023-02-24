@@ -129,6 +129,6 @@ export default {
 
 <style scoped>
 .body {
-  height: 60vh;
+  min-height: 60vh;
 }
 </style>

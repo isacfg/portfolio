@@ -20,12 +20,30 @@
           type="password"
           placeholder="Senha"
           v-model="password" />
-        <p v-if="errMsg">{{ errMsg }}</p>
+
         <button
           class="btn mt-4 w-full text-white dark:bg-white dark:text-black"
           @click="signIn">
           Entrar
         </button>
+      </div>
+      <div v-if="errMsg" class="w-1/3">
+        <div class="alert alert-error mt-4 shadow-lg">
+          <div>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-6 w-6 flex-shrink-0 stroke-current"
+              fill="none"
+              viewBox="0 0 24 24">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <span>Erro! {{ errMsg }}</span>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -34,6 +52,12 @@
       class="mb-8 w-2/3 text-center text-3xl font-bold text-black dark:text-blackDarkMode max-md:text-2xl">
       Você já está logado
     </h1>
+    <Button
+      class=""
+      to="/dashboard"
+      :isRouter="true"
+      text="Dashboard"
+      type="btn-primary" />
   </div>
 </template>
 
@@ -44,9 +68,13 @@ import {
   signInWithEmailAndPassword,
 } from '@firebase/auth'
 import { useRouter } from 'vue-router'
+import Button from '../components/Button.vue'
+
 export default {
   name: 'SignInView',
-  components: {},
+  components: {
+    Button,
+  },
   data() {
     return {
       email: '',
@@ -65,7 +93,8 @@ export default {
         })
         .catch((error) => {
           console.log(error.code)
-          alert(error.message)
+          this.errMsg = error.message
+          // alert(error.message)
         })
     },
   },
@@ -85,6 +114,6 @@ export default {
 
 <style scoped>
 .body {
-  height: 60vh;
+  min-height: 60vh;
 }
 </style>
