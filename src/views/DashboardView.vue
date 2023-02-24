@@ -1,12 +1,15 @@
 <template>
-  <div class="body container mx-auto mt-14 px-4" v-if="isLoggedIn">
-    <div class="w-full overflow-x-auto">
+  <div
+    class="body container mx-auto mt-14 flex flex-col items-center px-4"
+    v-if="isLoggedIn">
+    <!-- table -->
+    <div class="mb-8 w-full overflow-x-auto">
       <table class="table w-full">
         <!-- head -->
         <thead>
           <tr>
             <th></th>
-            <th class="capitalize text-black">Nome</th>
+            <th class="text-black">Nome</th>
             <th>Tech Stack</th>
             <th>Link</th>
             <th></th>
@@ -38,6 +41,11 @@
         </tfoot>
       </table>
     </div>
+    <Button
+      to="/dashboard/add"
+      :isRouter="true"
+      text="Adicionar projeto"
+      type="btn-primary" />
   </div>
 
   <!-- Se o usuário não estiver logado -->
@@ -66,7 +74,7 @@ import { mapStores } from 'pinia'
 import useProjectsStore from '@/stores/projects'
 
 export default {
-  Nome: 'DashboardView',
+  name: 'DashboardView',
   components: {
     RouterLink,
     Button,
@@ -82,7 +90,10 @@ export default {
       } else {
         alert('Você precisa estar logado para acessar essa página')
         this.isLoggedIn = false
-        this.$router.push('/signin')
+        // this.$router.push('/signin')
+        setTimeout(() => {
+          this.$router.push('/signin')
+        }, 1000)
       }
     })
   },
@@ -99,6 +110,6 @@ export default {
 
 <style scoped>
 .body {
-  height: 60vh;
+  min-height: 60vh;
 }
 </style>

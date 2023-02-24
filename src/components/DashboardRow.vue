@@ -4,13 +4,13 @@
     <td>
       <div class="flex items-center space-x-3">
         <div>
-          <div class="font-bold">{{ name }}</div>
+          <div  class="font-bold">{{ name }}</div>
         </div>
       </div>
     </td>
     <td>{{ techStack }}</td>
     <td>
-      <a target="_blank" :href="linkGithub">🔗 Github</a>
+      <a  target="_blank" :href="linkGithub">🔗 Github</a>
     </td>
 
     <th class="flex flex-col">
@@ -50,4 +50,6 @@ export default {
 }
 </script>
 
-<style scoped></style>
+<style scoped>
+
+</style>

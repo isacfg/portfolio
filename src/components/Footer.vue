@@ -33,7 +33,7 @@
         📖 Linkedin
       </a>
       <RouterLink
-        to="/dashboard"
+        to="/signin"
         class="bob-on-hover text-center text-black hover:text-purple dark:text-blackDarkMode max-md:text-sm">
         📊 Dashboard
       </RouterLink>
