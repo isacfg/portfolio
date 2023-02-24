@@ -90,7 +90,7 @@ export default {
       } else {
         alert('Você precisa estar logado para acessar essa página')
         this.isLoggedIn = false
-        // this.$router.push('/signin')
+        // Envia o usuário para tela de login
         setTimeout(() => {
           this.$router.push('/signin')
         }, 1000)

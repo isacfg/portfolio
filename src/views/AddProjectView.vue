@@ -290,7 +290,10 @@
 <script>
 import { useRouter } from 'vue-router'
 import { getAuth, onAuthStateChanged } from '@firebase/auth'
-import { addDoc, collection, getFirestore } from '@firebase/firestore'
+import { addDoc, collection, getFirestore, getDocs } from '@firebase/firestore'
+
+// Getting Pinia Store
+import useProjectsStore from '@/stores/projects'
 
 let db
 let projectsCollection
@@ -392,6 +395,22 @@ export default {
           this.gallery1 = ''
           this.gallery2 = ''
           this.gallery3 = ''
+
+          // Updating the store
+          getDocs(projectsCollection)
+            .then((snapshot) => {
+              let projects = []
+              snapshot.forEach((doc) => {
+                projects.push({ ...doc.data(), id: doc.id })
+              })
+              // Push data to store
+              useProjectsStore().setProjects(projects)
+              // console.log(projects)
+            })
+            .catch((err) => {
+              console.log('Erro ao ler docs firebase in main.js', err)
+            })
+
           // esperar para redirecionar
           setTimeout(() => {
             this.$router.push('/dashboard')
