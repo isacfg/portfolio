@@ -34,6 +34,12 @@
       class="mb-8 w-2/3 text-center text-3xl font-bold text-black dark:text-blackDarkMode max-md:text-2xl">
       Você já está logado
     </h1>
+    <Button
+      class=""
+      to="/dashboard"
+      :isRouter="true"
+      text="Dashboard"
+      type="btn-primary" />
   </div>
 </template>
 
@@ -44,9 +50,13 @@ import {
   signInWithEmailAndPassword,
 } from '@firebase/auth'
 import { useRouter } from 'vue-router'
+import Button from '../components/Button.vue'
+
 export default {
   name: 'SignInView',
-  components: {},
+  components: {
+    Button,
+  },
   data() {
     return {
       email: '',
