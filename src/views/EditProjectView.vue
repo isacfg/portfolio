@@ -4,8 +4,9 @@
     v-if="isLoggedIn">
     <h1
       class="text-3xl font-semibold text-black dark:text-blackDarkMode max-md:text-2xl">
-      Adicionar Projeto
+      Editar Projeto {{ projectData.name }}
     </h1>
+
     <!-- Form -->
     <form class="form-control mt-8 w-full max-w-md">
       <!-- Project Number -->
@@ -13,7 +14,7 @@
         <span class="label-text dark:text-grayDarkMode">Project Number</span>
       </label>
       <input
-        v-model="projectNumber"
+        v-model="projectData.projectNumber"
         name="projectNumber"
         type="text"
         placeholder="Project Number"
@@ -24,7 +25,7 @@
         <span class="label-text dark:text-grayDarkMode">Project Name</span>
       </label>
       <input
-        v-model="projectName"
+        v-model="projectData.name"
         name="projectName"
         type="text"
         placeholder="Project Name"
@@ -37,7 +38,7 @@
         >
       </label>
       <input
-        v-model="projectDescription"
+        v-model="projectData.description"
         name="projectDescription"
         type="text"
         placeholder="Project Description"
@@ -48,7 +49,7 @@
         <span class="label-text dark:text-grayDarkMode">Project Tech</span>
       </label>
       <input
-        v-model="projectTech"
+        v-model="projectData.tech"
         name="projectTech"
         type="text"
         placeholder="Project Tech"
@@ -59,7 +60,7 @@
         <span class="label-text dark:text-grayDarkMode">Project Image</span>
       </label>
       <input
-        v-model="projectImage"
+        v-model="projectData.image"
         name="projectImage"
         type="text"
         placeholder="Project Image"
@@ -70,7 +71,7 @@
         <span class="label-text dark:text-grayDarkMode">Project Link Demo</span>
       </label>
       <input
-        v-model="projectLinkDemo"
+        v-model="projectData.linkDemo"
         name="projectLinkDemo"
         type="text"
         placeholder="Project Link Demo"
@@ -83,7 +84,7 @@
         >
       </label>
       <input
-        v-model="projectLinkGithub"
+        v-model="projectData.linkGithub"
         name="projectLinkGithub"
         type="text"
         placeholder="Project Link Github"
@@ -96,7 +97,7 @@
         >
       </label>
       <input
-        v-model="projectLinkBehance"
+        v-model="projectData.linkBehance"
         name="projectLinkBehance"
         type="text"
         placeholder="Project Link Behance"
@@ -107,7 +108,7 @@
         <span class="label-text dark:text-grayDarkMode">Project Intro</span>
       </label>
       <input
-        v-model="projectIntro"
+        v-model="projectData.introd"
         name="projectIntro"
         type="text"
         placeholder="Project Intro"
@@ -118,7 +119,7 @@
         <span class="label-text dark:text-grayDarkMode">Project Challenge</span>
       </label>
       <input
-        v-model="projectChallenge"
+        v-model="projectData.challenge"
         name="projectChallenge"
         type="text"
         placeholder="Project Challenge"
@@ -129,7 +130,7 @@
         <span class="label-text dark:text-grayDarkMode">Project Process 1</span>
       </label>
       <input
-        v-model="projectProcess1"
+        v-model="projectData.process1"
         name="projectProcess1"
         type="text"
         placeholder="Project Process 1"
@@ -142,7 +143,7 @@
         >
       </label>
       <input
-        v-model="projectProcessImage"
+        v-model="projectData.processImage"
         name="projectProcessImage"
         type="text"
         placeholder="Project Process Image"
@@ -153,7 +154,7 @@
         <span class="label-text dark:text-grayDarkMode">Project Process 2</span>
       </label>
       <input
-        v-model="projectProcess2"
+        v-model="projectData.process2"
         name="projectProcess2"
         type="text"
         placeholder="Project Process 2"
@@ -166,7 +167,7 @@
         >
       </label>
       <input
-        v-model="projectProcessLegenda"
+        v-model="projectData.processLegenda"
         name="projectProcessLegenda"
         type="text"
         placeholder="Project Process Legenda"
@@ -177,7 +178,7 @@
         <span class="label-text dark:text-grayDarkMode">Project Result</span>
       </label>
       <input
-        v-model="projectResult"
+        v-model="projectData.result"
         name="projectResult"
         type="text"
         placeholder="Project Result"
@@ -188,7 +189,7 @@
         <span class="label-text dark:text-grayDarkMode">Project Takeaway</span>
       </label>
       <input
-        v-model="projectTakeaway"
+        v-model="projectData.takeaway"
         name="projectTakeaway"
         type="text"
         placeholder="Project Takeaway"
@@ -199,7 +200,7 @@
         <span class="label-text dark:text-grayDarkMode">Gallery Photo 1</span>
       </label>
       <input
-        v-model="gallery1"
+        v-model="projectData.gallery1"
         name="gallery1"
         type="text"
         placeholder="Gallery Photo 1"
@@ -210,7 +211,7 @@
         <span class="label-text dark:text-grayDarkMode">Gallery Photo 2</span>
       </label>
       <input
-        v-model="gallery2"
+        v-model="projectData.gallery2"
         name="gallery2"
         type="text"
         placeholder="Gallery Photo 2"
@@ -221,16 +222,16 @@
         <span class="label-text dark:text-grayDarkMode">Gallery Photo 3</span>
       </label>
       <input
-        v-model="gallery3"
+        v-model="projectData.gallery3"
         name="gallery3"
         type="text"
         placeholder="Gallery Photo 3"
         class="input-bordered input mb-4 w-full" />
 
       <button
-        @click.prevent="addProject()"
+        @click.prevent="editProject"
         class="btn mt-4 w-full text-white dark:bg-white dark:text-black">
-        Adicionar Projeto
+        Editar Projeto
       </button>
     </form>
     <!-- Mensagens de erro -->
@@ -289,22 +290,35 @@
 </template>
 
 <script>
-import { useRouter } from 'vue-router'
 import { getAuth, onAuthStateChanged } from '@firebase/auth'
-import { addDoc, collection, getFirestore, getDocs } from '@firebase/firestore'
+import {
+  collection,
+  getFirestore,
+  doc,
+  getDoc,
+  getDocs,
+  updateDoc,
+} from '@firebase/firestore'
+
+import useProjectsStore from '@/stores/projects'
 
 import Button from '@/components/Button.vue'
-
-// Getting Pinia Store
-import useProjectsStore from '@/stores/projects'
 
 let db
 let projectsCollection
 
 export default {
-  name: 'AddProjectView',
+  name: 'EditProjectView',
   components: {
     Button,
+  },
+  data() {
+    return {
+      isLoggedIn: false,
+      projectData: null,
+      sucessMessage: '',
+      errorMessage: '',
+    }
   },
   mounted() {
     // Scroll to top
@@ -326,105 +340,79 @@ export default {
     // Firebase db
     db = getFirestore()
     projectsCollection = collection(db, 'projects')
-  },
-  data() {
-    return {
-      isLoggedIn: false,
-      sucessMessage: '',
-      errorMessage: '',
-      projectNumber: '',
-      projectName: '',
-      projectDescription: '',
-      projectTech: '',
-      projectImage: '',
-      projectLinkDemo: '',
-      projectLinkGithub: '',
-      projectLinkBehance: '',
-      projectIntro: '',
-      projectChallenge: '',
-      projectProcess1: '',
-      projectProcessImage: '',
-      projectProcess2: '',
-      projectProcessLegenda: '',
-      projectResult: '',
-      projectTakeaway: '',
-      gallery1: '',
-      gallery2: '',
-      gallery3: '',
-    }
+
+    // Get project data
+    this.getProject()
   },
   methods: {
-    addProject() {
-      console.log('Adicionando projeto')
-      addDoc(projectsCollection, {
-        projectNumber: Number(this.projectNumber),
-        name: this.projectName,
-        description: this.projectDescription,
-        tech: this.projectTech,
-        image: this.projectImage,
-        linkDemo: this.projectLinkDemo,
-        linkGithub: this.projectLinkGithub,
-        linkBehance: this.projectLinkBehance,
-        introd: this.projectIntro,
-        challenge: this.projectChallenge,
-        process1: this.projectProcess1,
-        processImage: this.projectProcessImage,
-        process2: this.projectProcess2,
-        processLegenda: this.projectProcessLegenda,
-        result: this.projectResult,
-        takeaway: this.projectTakeaway,
-        gallery1: this.gallery1,
-        gallery2: this.gallery2,
-        gallery3: this.gallery3,
-      })
-        .then(() => {
-          console.log('Projeto adicionado com sucesso!')
-          this.sucessMessage = 'Projeto adicionado com sucesso!'
-          this.errorMessage = ''
-          this.projectNumber = ''
-          this.projectName = ''
-          this.projectDescription = ''
-          this.projectTech = ''
-          this.projectImage = ''
-          this.projectLinkDemo = ''
-          this.projectLinkGithub = ''
-          this.projectLinkBehance = ''
-          this.projectIntro = ''
-          this.projectChallenge = ''
-          this.projectProcess1 = ''
-          this.projectProcessImage = ''
-          this.projectProcess2 = ''
-          this.projectProcessLegenda = ''
-          this.projectResult = ''
-          this.projectTakeaway = ''
-          this.gallery1 = ''
-          this.gallery2 = ''
-          this.gallery3 = ''
+    async getProject() {
+      try {
+        const docRef = doc(db, 'projects', this.$route.params.id)
+        const docSnap = await getDoc(docRef)
 
-          // Updating the store
-          getDocs(projectsCollection)
-            .then((snapshot) => {
-              let projects = []
-              snapshot.forEach((doc) => {
-                projects.push({ ...doc.data(), id: doc.id })
-              })
-              // Push data to store
-              useProjectsStore().setProjects(projects)
-              // console.log(projects)
-            })
-            .catch((err) => {
-              console.log('Erro ao ler docs firebase in main.js', err)
-            })
+        if (docSnap.exists()) {
+          console.log('Document data:', docSnap.data())
+          this.projectData = docSnap.data()
+        } else {
+          // doc.data() will be undefined in this case
+          console.log('No such document!')
+        }
+      } catch (error) {
+        console.log('Error getting document:', error)
+      }
+    },
+    async editProject() {
+      try {
+        const docRef = doc(db, 'projects', this.$route.params.id)
+        await updateDoc(docRef, {
+          projectNumber: Number(this.projectData.projectNumber),
+          name: this.projectData.name,
+          description: this.projectData.description,
+          tech: this.projectData.tech,
+          image: this.projectData.image,
+          linkDemo: this.projectData.linkDemo,
+          linkGithub: this.projectData.linkGithub,
+          linkBehance: this.projectData.linkBehance,
+          introd: this.projectData.introd,
+          challenge: this.projectData.challenge,
+          process1: this.projectData.process1,
+          processImage: this.projectData.processImage,
+          process2: this.projectData.process2,
+          processLegenda: this.projectData.processLegenda,
+          result: this.projectData.result,
+          takeaway: this.projectData.takeaway,
+          gallery1: this.projectData.gallery1,
+          gallery2: this.projectData.gallery2,
+          gallery3: this.projectData.gallery3,
+        })
 
-          // esperar para redirecionar
-          setTimeout(() => {
-            this.$router.push('/dashboard')
-          }, 1000)
-        })
-        .catch((error) => {
-          this.errorMessage = error.message
-          this.sucessMessage = ''
-        })
+        // Updating the store
+        getDocs(projectsCollection)
+          .then((snapshot) => {
+            let projects = []
+            snapshot.forEach((doc) => {
+              projects.push({ ...doc.data(), id: doc.id })
+            })
+            // Push data to store
+            useProjectsStore().setProjects(projects)
+            // console.log(projects)
+          })
+          .catch((err) => {
+            console.log('Erro ao ler docs firebase in main.js', err)
+          })
+
+        // alert('Projeto editado com sucesso')
+        console.log('Projeto adicionado com sucesso!')
+        this.sucessMessage = 'Projeto adicionado com sucesso!'
+
+        setTimeout(() => {
+          this.$router.push('/dashboard')
+        }, 1000)
+      } catch (error) {
+        console.log('Error getting document:', error)
+        this.errorMessage = error.message
+        this.sucessMessage = ''
+      }
     },
   },
 }
