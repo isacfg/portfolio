@@ -14,7 +14,10 @@
     </td>
 
     <th class="flex flex-col">
-      <button class="btn-ghost btn-sm btn" @click="editUser">✏️ Editar</button>
+      <!-- editar btn -->
+      <RouterLink :to="`/dashboard/edit/${id}`" class="btn-ghost btn-sm btn"
+        >✏️ Editar</RouterLink
+      >
       <button class="btn-ghost btn-sm btn" @click="toggleModalDelete()">
         🗑️ Excluir
       </button>
@@ -61,6 +64,8 @@ import {
 // Getting Pinia Store
 import useProjectsStore from '@/stores/projects'
 
+import { RouterLink } from 'vue-router'
+
 let db
 let projectsCollection
 
@@ -93,9 +98,6 @@ export default {
     projectsCollection = collection(db, 'projects')
   },
   methods: {
-    editUser() {
-      console.log('editUser')
-    },
     async deleteUser() {
       console.log('deleteUser')
       try {

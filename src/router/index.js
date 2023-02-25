@@ -64,6 +64,14 @@ const router = createRouter({
       },
     },
     {
+      path: '/dashboard/edit/:id',
+      name: 'edit-project',
+      component: () => import('../views/EditProjectView.vue'),
+      meta: {
+        title: 'Editar projeto',
+      },
+    },
+    {
       path: '/:pathMatch(.*)*',
       name: 'not-found',
       component: () => import('../views/NotFoundView.vue'),
