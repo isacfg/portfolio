@@ -40,10 +40,10 @@
           {{ projectTechs }}
         </p>
       </div>
-      <div>
+      <div class="mt-8 flex items-center justify-between">
         <RouterLink
           :to="`/projects/${projectId}`"
-          class="bob-on-hover mt-8 flex items-center gap-x-2 text-base font-semibold leading-6 text-purple dark:brightness-150 max-md:text-sm"
+          class="bob-on-hover flex items-center gap-x-2 text-base font-semibold leading-6 text-purple dark:brightness-150 max-md:text-sm"
           >Ver Projeto
           <span
             ><img
@@ -52,6 +52,30 @@
               alt=""
           /></span>
         </RouterLink>
+        <div class="socials-icons flex gap-x-6">
+          <a
+            target="_blank"
+            class="bob-on-hover dark hover:text-purple dark:text-purpleDarkMode"
+            :href="behanceLink">
+            <img
+              :src="behancePath"
+              id="behance"
+              class="max-md:w-6"
+              alt=""
+              srcset="" />
+          </a>
+          <a
+            target="_blank"
+            class="bob-on-hover dark hover:text-purple dark:text-purpleDarkMode"
+            :href="githubLink">
+            <img
+              :src="githubPath"
+              id="github"
+              class="max-md:w-6"
+              alt=""
+              srcset="" />
+          </a>
+        </div>
       </div>
     </div>
   </div>
@@ -98,11 +122,44 @@ export default {
     isFirst: {
       default: 'false',
     },
+    isDarkCard: {
+      type: Boolean,
+      default: false,
+    },
+    behanceLink: {
+      type: String,
+      default: 'https://www.behance.net/isaacf',
+    },
+    githubLink: {
+      type: String,
+      default: 'https://github.com/isacfg',
+    },
   },
   data() {
-    return {}
+    return {
+      behancePath: '',
+      githubPath: '',
+      linkedinPath: '',
+    }
   },
-
+  mounted() {
+    if (this.isDarkCard) {
+      this.behancePath = '/icons/behance-dark.svg'
+      this.githubPath = '/icons/github-dark.svg'
+    } else {
+      this.behancePath = '/icons/behance-light.svg'
+      this.githubPath = '/icons/github-light.svg'
+    }
+  },
+  updated() {
+    if (this.isDarkCard) {
+      this.behancePath = '/icons/behance-dark.svg'
+      this.githubPath = '/icons/github-dark.svg'
+    } else {
+      this.behancePath = '/icons/behance-light.svg'
+      this.githubPath = '/icons/github-light.svg'
+    }
+  },
   methods: {},
 }
 </script>
