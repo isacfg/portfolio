@@ -18,7 +18,10 @@
         :projectDescription="project.description"
         :projectTechs="project.tech"
         :projectPhoto="project.photo"
-        :projectId="project.projectNumber" />
+        :projectId="project.projectNumber"
+        :isDarkCard="isDarkHome"
+        :behanceLink="project.linkBehance"
+        :githubLink="project.linkGithub" />
     </div>
   </div>
 
@@ -42,6 +45,11 @@ export default {
   },
   data() {
     return {}
+  },
+  props: {
+    isDarkHome: {
+      type: Boolean,
+    },
   },
   mounted() {
     // scroll to top

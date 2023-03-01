@@ -37,6 +37,32 @@
             class="mt-4 w-2/3 text-center dark:text-grayDarkMode max-md:text-sm">
             {{ projectsStore.projects[$route.params.id - 1].tech }}
           </p>
+          <!-- SOCIALS -->
+          <div class="socials-icons mt-6 flex gap-x-6">
+            <a
+              target="_blank"
+              class="bob-on-hover dark hover:text-purple dark:text-purpleDarkMode"
+              :href="projectsStore.projects[$route.params.id - 1].linkBehance">
+              <img
+                :src="behancePath"
+                id="behance"
+                class="max-md:w-6"
+                alt=""
+                srcset="" />
+            </a>
+            <a
+              target="_blank"
+              class="bob-on-hover dark hover:text-purple dark:text-purpleDarkMode"
+              :href="projectsStore.projects[$route.params.id - 1].linkGithub">
+              <img
+                :src="githubPath"
+                id="github"
+                class="max-md:w-6"
+                alt=""
+                srcset="" />
+            </a>
+          </div>
+          <!-- FIM SOCIALS -->
           <img
             class="bob-on-hover mt-16 max-md:mt-8"
             src="/placeholder-project-ind.png"
@@ -117,12 +143,40 @@ export default {
     ProjectTextBlock,
     NotFound,
   },
+  data() {
+    return {
+      behancePath: '',
+      githubPath: '',
+      linkedinPath: '',
+    }
+  },
   computed: {
     ...mapStores(useProjectsStore),
+  },
+  props: {
+    isDarkHome: {
+      type: Boolean,
+    },
   },
   mounted() {
     // scroll to top
     window.scrollTo(0, 0)
+    if (this.isDarkHome) {
+      this.behancePath = '/icons/behance-dark.svg'
+      this.githubPath = '/icons/github-dark.svg'
+    } else {
+      this.behancePath = '/icons/behance-light.svg'
+      this.githubPath = '/icons/github-light.svg'
+    }
+  },
+  updated() {
+    if (this.isDarkHome) {
+      this.behancePath = '/icons/behance-dark.svg'
+      this.githubPath = '/icons/github-dark.svg'
+    } else {
+      this.behancePath = '/icons/behance-light.svg'
+      this.githubPath = '/icons/github-light.svg'
+    }
   },
 }
 </script>
