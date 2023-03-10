@@ -13,8 +13,8 @@
       <div v-if="hasImage" class="">
         <div class="image mt-8 max-md:mt-4">
           <img
-            class="bob-on-hover w-full"
-            src="/placeholder-project-2.png"
+            class="bob-on-hover w-full rounded-lg"
+            :src="this.image"
             alt="" />
           <p
             class="mt-2 pl-8 text-sm text-gray dark:text-grayDarkMode max-md:pl-2">
@@ -45,18 +45,18 @@
         <div class="gallery mt-12">
           <div class="top flex flex-row max-md:flex-col">
             <img
-              class="bob-on-hover w-2/5 max-md:w-full"
-              src="/placeholder-project-2.png"
+              class="bob-on-hover w-2/5 rounded-lg object-cover max-md:w-full"
+              :src="this.gallery1"
               alt="" />
             <img
-              class="bob-on-hover w-3/5 pl-4 max-md:mt-4 max-md:w-full max-md:pl-0"
-              src="/placeholder-project-2.png"
+              class="bob-on-hover w-3/5 rounded-lg object-cover pl-4 max-md:mt-4 max-md:w-full max-md:pl-0"
+              :src="this.gallery2"
               alt="" />
           </div>
           <div class="bottom mt-4">
             <img
-              class="bob-on-hover w-full"
-              src="/placeholder-project-2.png"
+              class="bob-on-hover w-full rounded-lg object-cover"
+              :src="this.gallery3"
               alt="" />
           </div>
         </div>
@@ -82,6 +82,10 @@ export default {
     hasImage: {
       type: Boolean,
       default: false,
+    },
+    image: {
+      type: String,
+      default: '',
     },
     textImage: {
       type: String,

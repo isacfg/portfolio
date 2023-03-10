@@ -65,7 +65,7 @@
           <!-- FIM SOCIALS -->
           <img
             class="bob-on-hover mt-16 max-md:mt-8"
-            src="/placeholder-project-ind.png"
+            :src="projectsStore.projects[$route.params.id - 1].image"
             alt="" />
         </div>
         <div class="body mx-auto">
@@ -84,6 +84,7 @@
             id="processo"
             title="Processo"
             :hasImage="true"
+            :image="projectsStore.projects[$route.params.id - 1].processImage"
             :text="projectsStore.projects[$route.params.id - 1].process1"
             :text2="projectsStore.projects[$route.params.id - 1].process2"
             :legenda="
@@ -96,7 +97,10 @@
             :takeawayText="
               projectsStore.projects[$route.params.id - 1].takeaway
             "
-            :isLast="true" />
+            :isLast="true"
+            :gallery1="projectsStore.projects[$route.params.id - 1].gallery1"
+            :gallery2="projectsStore.projects[$route.params.id - 1].gallery2"
+            :gallery3="projectsStore.projects[$route.params.id - 1].gallery3" />
         </div>
       </article>
     </div>

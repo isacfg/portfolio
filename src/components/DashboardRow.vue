@@ -8,7 +8,7 @@
         </div>
       </div>
     </td>
-    <td>{{ techStack }}</td>
+    <td class="">{{ techStack }}</td>
     <td>
       <a target="_blank" :href="linkGithub">🔗 Github</a>
     </td>
