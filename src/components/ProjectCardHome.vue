@@ -7,15 +7,16 @@
     }">
     <div class="left bob-on-hover mx-auto w-1/2 max-md:w-full">
       <img
-        src="../assets/placeholder.png"
+        :src="this.photo"
         alt="Project Photo"
+        class="pr-8 max-md:pr-0"
         :class="{
           'mr-auto': type === 'text-right',
           'ml-auto': type === 'text-left',
         }" />
     </div>
     <div
-      class="right flex max-h-full w-1/2 flex-col justify-between pb-4 pt-2 max-md:mt-8 max-md:w-full max-md:px-2 max-md:pt-4"
+      class="right flex max-h-full w-1/2 flex-col justify-between pb-4 pt-2 max-md:mt-8 max-md:w-full max-md:px-2 max-md:pt-2"
       :class="{
         'mr-auto': type === 'text-left',
         'ml-auto': type === 'text-right',

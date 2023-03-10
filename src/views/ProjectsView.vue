@@ -21,7 +21,8 @@
         :projectId="project.projectNumber"
         :isDarkCard="isDarkHome"
         :behanceLink="project.linkBehance"
-        :githubLink="project.linkGithub" />
+        :githubLink="project.linkGithub"
+        :photo="project.image" />
     </div>
   </div>
 
